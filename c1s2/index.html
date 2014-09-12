@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Fundamentals 2</title>
+
+  
+
+  <meta name="viewport" content="width=device-width">
+  <!-- Twitter bootstrap basic styles -->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css">
+
+
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="../css/syntax.css">
+  <!-- Google webfont link -->
+<link href='http://fonts.googleapis.com/css?family=Arvo:700|Titillium+Web:900' rel='stylesheet' type='text/css'>
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script src="../assets/jquery-1.10.0.js"></script>
+
+  <script type="text/javascript" src='../bootstrap/js/bootstrap.js'></script>
+  <script type="text/javascript" src='../assets/custom.js'></script>
+
+<body class="">
+
+  <div class="container">
+
+    <div class="page-header">
+  <h1>Web Fundamentals 2 <small>Git and CSS</small></h1>
+</div>
+
+<div class="tabbable tabs-left">
+<ul class="nav nav-tabs" id="myTab">
+	
+		
+		<li class="active"><a href="#1_using_git.md" data-toggle="tab">Intro to Git </a></li>
+		
+	
+		
+		<li><a href="#2_pushing_to_github.md" data-toggle="tab">Pushing code to Github </a></li>
+		
+	
+		
+		<li><a href="#3_css.md" data-toggle="tab">CSS </a></li>
+		
+	
+		
+		<li><a href="#4_selectors.md" data-toggle="tab">Selectors and Attributes </a></li>
+		
+	
+		
+		<li><a href="#5_separate_css_file.md" data-toggle="tab">External stylesheets </a></li>
+		
+	
+		
+		<li><a href="#6_homework.md" data-toggle="tab">Homework </a></li>
+		
+	
+</ul>
+
+<div class="tab-content">
+
+	
+	<div class="tab-pane active" id="1_using_git.md">
+	
+
+		<h2>Intro to Git</h2>
+		<p>Git is a version control system. It allows you to keep the entire history of your code, and makes it easy to share and collaborate with others.</p>
+
+<p>To use git you need to create a <strong>Git repository</strong>. You can think of a git repository like this:</p>
+
+<p><img src="/assets/basic_git.png" alt="Basic git" /></p>
+
+<ul>
+  <li>A repository contains lots of <strong>commits</strong>. Each commit is essentially a different version of your files.</li>
+  <li>Commits can be organised into <strong>branches</strong>. A repository can contain many different branches. Branches are often used to develop new application features - that way the main codebase still works while the feature is being developed, and the new code can be <em>merged</em> in when it’s working.</li>
+  <li>Branches have names, so you can keep track of them. When you first set up a repository, you’ll just have one branch and it will have the default name - <strong>master</strong>.</li>
+</ul>
+
+<h3 id="what-does-a-git-repository-look-like">What does a git repository look like?</h3>
+
+<p>On your laptop, a git repository is just a <strong>special type of folder</strong>. Any folder can be made into a git repository (but not all folders should - e.g. don’t make your entire documents directory into a git repository, you’ll run into problems). You’ll normally make a new git repository for each coding project you work on.</p>
+
+<p>If you look inside the folder, you won’t see all the different versions stored there (they are actually there - just stored inside a hidden folder called <code>.git</code>) - you’ll only see the files that are in your <strong>working copy</strong>. Normally this working copy will contain the files from the last commit on the master branch, along with any changes you’ve made.</p>
+
+<h3 id="making-a-commit">Making a commit</h3>
+
+<p>To save some changes into the repository you need to create a commit. When you create a commit you get to write a message, to help remind yourself (and others) what changes you made (and why you made them). Once you’ve created a commit, you’ll be able to come back to this version of your code at any point in the future.</p>
+
+<p>Adding files to a git repository is actually a two-stage process: first you have to <strong>add</strong> them to something called the <strong>index</strong> and then you have to <strong>commit</strong> them. This is useful when you get more advanced, but we’ll usually do those things together for the time being.</p>
+
+<p><img src="/assets/index_working_tree.png" alt="Index and working tree" /></p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Set up your <code>first_site</code> folder as a git repository.
+2. <strong>Add</strong> your work to the index.
+3. <strong>Commit</strong> your work to the repository, with a message e.g. “Initial import”
+4. Make some change to index.html (in Sublime Text)      <br />
+5. <strong>Add</strong> your changes to the index.
+6. <strong>Commit</strong> them to the repository.</p>
+</div>
+
+<h3 id="git-with-sourcetree">Git with SourceTree</h3>
+
+<h4 id="creating-a-git-repository">Creating a git repository</h4>
+
+<ol>
+  <li>Open SourceTree</li>
+  <li>Select File &gt; New / Clone</li>
+  <li>Select the ‘New’ option</li>
+  <li>Navigate to the folder you want to make into a git repository.</li>
+</ol>
+
+<h4 id="adding-to-the-index">Adding to the index</h4>
+
+<ol>
+  <li>Select all the files in the working tree section.</li>
+  <li>Click the “Add” button at the top.</li>
+  <li>You should see the files move to the ‘Index’ section</li>
+</ol>
+
+<h4 id="committing-to-the-repository">Committing to the repository</h4>
+
+<ol>
+  <li>Once you have files in your ‘Index’ section, click on ‘Commit’.</li>
+  <li>Write a commit message explain what you’ve done (and maybe why).</li>
+  <li>Click “Commit”</li>
+</ol>
+
+<h3 id="git-with-the-command-line">Git with the command line</h3>
+
+<h4 id="creating-a-git-repository-1">Creating a git repository</h4>
+
+<ol>
+  <li>Using the command line, navigate to the folder you want to make into a repository.</li>
+  <li>
+    <p><strong>Inside the target folder</strong> run the command</p>
+
+    <pre><code> git init
+</code></pre>
+  </li>
+  <li>
+    <p>To check this worked run the command</p>
+
+    <pre><code> git status
+</code></pre>
+  </li>
+</ol>
+
+<h4 id="adding-to-the-index-1">Adding to the index</h4>
+
+<ol>
+  <li>
+    <p>Inside the folder, run the command</p>
+
+    <pre><code> git add --all
+</code></pre>
+  </li>
+  <li>
+    <p>To check this worked run the command</p>
+
+    <pre><code> git status
+</code></pre>
+  </li>
+</ol>
+
+<h4 id="committing-to-the-repository-1">Committing to the repository</h4>
+
+<ol>
+  <li>
+    <p>Inside the folder, run the command</p>
+
+    <pre><code> git commit -m "write your message here"
+</code></pre>
+  </li>
+  <li>
+    <p>To check this worked run the command</p>
+
+    <pre><code> git status
+</code></pre>
+  </li>
+</ol>
+
+
+	</div>
+
+	
+	<div class="tab-pane " id="2_pushing_to_github.md">
+	
+
+		<h2>Pushing code to Github</h2>
+		<p>Github is a site which will host a git repo online for you, making it easy to collaborate with others. We’ll now see how to put some code online.</p>
+
+<h3 id="aside-serving-a-site-via-github-pages">Aside: serving a site via Github Pages</h3>
+
+<p>Normally when we push code up to github, it just sits there for others to see and contribute to. The code we’re about to push up happens to be the code for a website. Instead of the files just sitting there, we want github to <em>serve</em> them as a website. The way github does this is through its <a href="http://pages.github.com/">github pages</a>.</p>
+
+<p>There are several ways of getting GitHub to publish your site as a GitHub page. We’re going to use a simple trick: in the branches panel of the GitHub app, change the name of the current branch from <code>master</code> to <code>gh-pages</code>.</p>
+
+<div class="alert alert-warning">If you haven't verified your email with github (you'll see a warning at the top of the screen when you log in). Your GitHub won't serve your page at all. Make sure you've verified you email address, before continuing!</div>
+
+<h3 id="pushing-code-up-to-github">Pushing code up to github</h3>
+
+<p>Go to github, login, and click “Create New Repo” in the top left hand corner.</p>
+
+<p><img src="/assets/create_repo.png" alt="Creating a repo on GitHub" /></p>
+
+<p>Follow the instructions, calling it something like <code>first_site</code>. <strong>Do not</strong> click the box which says ‘Create a readme with this repository’. You’ll get to a page when it’ll describe how to get your code online. You want to follow the instructions for “Pushing an existing repository to github”.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Log in to GitHub and check you’ve verified your email address.
+2. Change the name of your master branch to ‘gh-pages’.
+3. On github create a new repository called ‘first_site’.
+4. Push your code up to github.
+3. On Github check you can see your <code>first_site</code> code.
+4. On the code page on github, click on Settings. It should tell you (about half way down) the url where they’ve published your site. Have a look to see whether you can see it!
+5. (If you finish early) Make a change to <code>index.html</code> in Sublime Text. Add and commit the change to the repository and then push it to GitHub. Make sure you can see the change in the code on GitHub and also in the published page.</p>
+</div>
+
+<h3 id="git-with-source-tree">Git with source tree</h3>
+
+<h4 id="change-the-branch-name-to-gh-pages">Change the branch name to ‘gh-pages’</h4>
+
+<ol>
+  <li>Go to the branches section on the right hand side.</li>
+  <li>Right-click on the name and select ‘rename’.</li>
+</ol>
+
+<h4 id="pushing-to-github-for-the-first-time">Pushing to github for the first time</h4>
+
+<ol>
+  <li>In the ‘Repository’ menu, click ‘Add remote’.</li>
+  <li>Copy the git url (from the bottom right) on github, and copy it into the source tree ‘URL/path’ box.</li>
+</ol>
+
+<h4 id="pushing-for-a-second-time">Pushing for a second time</h4>
+
+<h3 id="git-with-the-command-line">Git with the command line</h3>
+
+<h4 id="change-the-branch-name-to-gh-pages-1">Change the branch name to ‘gh-pages’</h4>
+
+<ol>
+  <li>Using the command line, navigate to the repository folder.</li>
+  <li>
+    <p>Run the command:</p>
+
+    <pre><code> git branch -m gh-pages
+</code></pre>
+  </li>
+  <li>
+    <p>To check this worked, run the command:</p>
+
+    <pre><code> git branch -a
+</code></pre>
+  </li>
+</ol>
+
+<h4 id="pushing-to-github-for-the-first-time-1"> Pushing to github for the first time</h4>
+
+<p>We’re assiming here that you’ve just created your repository and are on the github new repository screen.</p>
+
+<p><img src="/assets/push_repo_github.png" alt="Push repo to GitHub" /></p>
+
+<p>If you’ve set up ssh keys, go for the ssh option, if not, go for https. You should end up doing something like:</p>
+
+<pre><code>$ git remote add origin git@github.com/yourusername/first_site.git
+$ git push -u origin master
+</code></pre>
+
+<p>You might now be prompted to add your github username and password (if you’re doing the https method). If all goes well, when you go to github you should see the <code>first_site</code> folder containing your html file.</p>
+
+<h4 id="pushing-to-github-for-a-second-time">Pushing to github for a second time</h4>
+
+<ol>
+  <li>
+    <p>In the repository folder, run the command</p>
+
+    <pre><code> git push
+</code></pre>
+  </li>
+</ol>
+
+	</div>
+
+	
+	<div class="tab-pane " id="3_css.md">
+	
+
+		<h2>CSS</h2>
+		<p>Last time we looked at HTML, and saw how this was used to mark up the information in a webpage. Right now, your HTML pages don’t look very good, as you haven’t given any styling information. The way to do this is using CSS (Cascading Style Sheets).</p>
+
+<p>CSS is a way of separating the way your page looks from the content that it displays. As an extreme example of this check out <a href="http://www.csszengarden.com/">CSS Zen Garden</a> - by clicking on the links you completely change how the site looks, but the html remains unchanged.</p>
+
+<p>There are a few ways to include CSS in an HTML file:</p>
+
+<ol>
+  <li>Put the css inline in the html.</li>
+  <li>Put the css in a <code>&lt;style&gt;..&lt;/style&gt;</code> section in the <code>&lt;head&gt;</code></li>
+  <li>Link to a separate <code>.css</code> file in the <code>&lt;head&gt;</code></li>
+</ol>
+
+<p>The first way is sometimes useful, but defeats the point of using CSS to separate presentation and information. The second way is a bit better and is what we’ll do now - it’s nice to have everything in a single file when you’re just starting. The third way is the best. We’ll look at how to do this next time.</p>
+
+<h3 id="css-in-the-head">CSS in the <code>&lt;head&gt;</code></h3>
+
+<p>If you’re putting your CSS in the <code>&lt;head&gt;</code> of your html file (option 2) it should look something like this: </p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Some title<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span></code></pre></div>
+
+<p>The bit inside the <code>&lt;style&gt;</code> tags is CSS. The <code>h1</code> bit specifies the tag that will be styled. The bit inside the <code>{ ... }</code> specifies the styles that will be applied. Here we change the colour of the <code>h1</code> text red.</p>
+
+<p>If you save the changes to the html file, then open (or refresh) the page in your browser you should see the changes. By opening the developer tools, and hovering over the <code>h1</code> you should be able to see your css rule at the side.</p>
+
+<h3 id="a-few-more-properties">A few more properties</h3>
+
+<p>In the example above we changed the color of the <code>h1</code> element. Here are a few examples of other simple properties you can try out while you’re getting the hang of css:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">p</span> <span class="p">{</span> <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Arial&#39;</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">h2</span> <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">h3</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">2px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Note that you can specify multiple properties on one element. When you do this it’s nice to lay them out on multiple lines as done above.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Use git to clone the repo for this part of the session: <a href="https://github.com/code61/html2">https://github.com/code61/html2</a>.
+2. Open <code>exercise1.html</code> in Sublime Text and in Chrome.
+3. Add some css in the <code>head</code> to make the <code>h1</code> turn red.
+5. Continue with the exercise until <code>exercise1.html</code> looks like <code>exercise1_solution.png</code>.</p>
+</div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="4_selectors.md">
+	
+
+		<h2>Selectors and Attributes</h2>
+		<p>So far you have used html tags to specify CSS rules. For example,</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">h2</span> <span class="p">{</span> 
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">pink</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>will turn all your <code>&lt;h2&gt;</code> massive and pink.</p>
+
+<p>It is often useful to be able to make CSS rules more specific, so you can apply different styles to different parts of the page. One common way to do this is to target specific html attributes - in particular <code>id</code> and <code>class</code>.</p>
+
+<h3 id="the-id-and-class-attributes">The <code>id</code> and <code>class</code> attributes</h3>
+
+<p>HTML tags can have <em>attributes</em> which provide additional information about the element. You’ve aready seen some examples of this:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.facebook.com&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;cat_pic.png&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>Both <code>href</code> and <code>src</code> are examples of html attributes. They are written in pairs with their values: <code>attribute="value"</code>.</p>
+
+<p>There are some attributes that can be added to any tag. Two examples of these are <code>id</code> and <code>class</code>:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;products_title&quot;</span><span class="nt">&gt;</span>Our scrumptious puddings<span class="nt">&lt;/h2&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;products_list&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Black forrest gateau<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Rasberry lemon swirl cheesecake<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Sticky toffee pudding<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Death-by-chocolate cake<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/uk&gt;</span></code></pre></div>
+
+<p>Both <code>id</code> and <code>class</code> are used to add some information to the HTML tags. The key difference is that <code>id</code> should specify a <em>unique element on the page</em>, whereas multiple elements can share the same <code>class</code>.</p>
+
+<p>CSS lets you target the <code>id</code> and <code>class</code> attributes in special ways:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* make the h2 with id=&quot;products_title&quot; purple */</span>
+<span class="nt">h2</span><span class="nf">#products_title</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* remove the bullets from all li with class=&quot;product_item&quot; */</span>
+<span class="nt">li</span><span class="nc">.product_item</span> <span class="p">{</span> <span class="k">list-style-type</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
+
+<p>The <code>id</code> is targeted by adding <code>#id_value</code> to the tag and the <code>class</code> is targeted by adding <code>.class_value</code> to the tag.</p>
+
+<p>It is also possible to target any items with a given <code>class</code> or <code>id</code> by leaving out the HTML tag:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* make any element with id=&quot;products_title&quot; purple */</span>
+<span class="nf">#products_title</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* make any element with class=&quot;product_item blue&quot; */</span>
+<span class="nc">.product_item</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
+
+<h3 id="divs-and-spans">Divs and spans</h3>
+
+<p>There are two important HTML tags, that we didn’t use last week: <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>. Both are really useful when it comes to using HTML attributes to target CSS classes.</p>
+
+<p><code>&lt;div&gt;</code> stands for <em>division</em> and is used to break the page up into different parts. It is a ‘block-level’ element, which means that it will start a new line before and after it.</p>
+
+<p><code>&lt;span&gt;</code> can be used to apply classes and ids to certain bits of text. It is an ‘inline’ element, which won’t start a new paragrah before or after.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;info_section&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>This is a paragraph in the info section. We can use a span to target <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;important&#39;</span><span class="nt">&gt;</span>certain bits of important text<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Open the file <code>html2/exercise2.html</code> in Sublime Text and Chrome.
+3. Continue until your page looks like <code>html2/exercise2_solution.png</code></p>
+</div>
+
+
+	</div>
+
+	
+	<div class="tab-pane " id="5_separate_css_file.md">
+	
+
+		<h2>External stylesheets</h2>
+		<p>So far you have written your CSS rules directly in the <code>head</code> section of your html page:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  	<span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
+  	<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+  	  <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+  	<span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="c">&lt;!-- body goes here --&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<p>We did this to make your first experiments with CSS quick an easy. In a live site it is considered bad practice to put your CSS inside the <code>head</code> section: Typically a site will have one set of styles that apply to all the pages. By separating these CSS rules into their own file you (a) reduce repetition in your code and (b) reduce the amount of information that has to be sent to the browser for each page - if the CSS file applies to the whole site, it only needs to be sent to the visitor once.</p>
+
+<p>To link to an external CSS file you can do the following:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  	<span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
+  	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">type=</span><span class="s">&#39;text/css&#39;</span> <span class="na">href=</span><span class="s">&#39;path/to/my_css_file.css&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="c">&lt;!-- body goes here --&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<h3 id="linking-to-other-files">Linking to other files</h3>
+
+<p>Linking to other files (stylesheets, javascript files, images) can be done in several ways, just like linking to another page. Say you have the following directory structure:</p>
+
+<pre><code>first_site
+|
+---- index.html
+|
+---- images
+|    |
+|    ---- background.jgp
+|
+---- stylesheets
+     |
+      ---- main.css
+</code></pre>
+
+<p>and you’re going to deploy your site to “http://www.my_first_site.com”. Suppose you want to link to <code>main.css</code> from <code>index.html</code> and to <code>background.jpg</code> from <code>main.css</code>. There are three different styles of links you can use:</p>
+
+<h4 id="absolute-links">1. Absolute links</h4>
+
+<p>Absolute external links include the complete url to the resource you’re linking to. <strong>Absolute links start with either http:// or https://</strong>.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- in index.html --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.my_first_site.com/stylesheets/main.css&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* in main.css */</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;http://www.my_first_site.com/images/background.jpg&quot;)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Absolute external links can be used to link to resources held on different sites, but wouldn’t usually be used for links within your own site. They’re a bit fragile - if you change your domain name all the links will break. They also won’t work when you’re developing locally.</p>
+
+<h4 id="root-relative-links">2. Root-relative links</h4>
+
+<p>Root-relative links contain the path to the resource <em>relative to the site’s root</em>. The site’s root is (roughly) the folder that contains the site - in this case, <code>first_site</code>. <strong>Root-relative links begin with a <code>/</code></strong>:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- in index.html --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;/stylesheets/main.css&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* in main.css */</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;/images/background.jpg&quot;)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Root-relative links are a bit more flexible than absolute external links: e.g. if you change your domain name everything will still be fine. They’re sometimes useful for your own static sites, but probably won’t work when developing locally (because the root will be taken to be the root of your file system and not the folder containing the site!).</p>
+
+<h4 id="document-relative-links">3. Document-relative links</h4>
+
+<p>Document-relative links contain the path to the resource <em>relative to the file where the link is written</em>. <strong>Document-relative links don’t begin with <code>/</code></strong>:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- in index.html --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;stylesheets/main.css&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* in main.css */</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;../images/background.jpg&quot;)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>To link to the stylesheet from <code>index.html</code> we use <code>stylesheets/main.css</code> which says “look in the same folder I’m in (<code>first_site</code>) and find a folder called <code>styleheets</code> and a file in it called <code>main.css</code>”.</p>
+
+<p>To link to the image from the stylesheet is slightly more complicated: we use <code>../images/background.jpg</code>. This means “go to the folder above the one I’m in (I’m in <code>stylesheets</code>, so that’s <code>first_site</code>) and find a folder called <code>images</code> and a file in it called <code>background.jpg</code>”. </p>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Important to know</h3>
+  </div>
+  <div class="panel-body">
+    In document-relative links (and in many other places e.g. command line navigation)
+   <ul>
+      <li><code>.</code> means in the folder <strong>that I'm in</strong></li>
+      <li><code>..</code> means in the folder <strong>above the one that I'm in</strong></li>
+    </ul> 
+  </div>
+</div>
+
+<p>Relative links are the most flexible - they will work on your local file system. The only think you have to be careful about is moving your files into different folders, which can cause links to break.</p>
+
+<p><strong>You should be using relative local links in these exercises.</strong></p>
+
+<p>For a recap of all this, read <a href="https://www.inkling.com/read/dreamweaver-cs6-missing-manual-david-sawyer-mcfarland-1st/chapter-4/understanding-links">this article</a>.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Return to <code>exercise1.html</code> and separate the CSS out into a separate file (called <code>exercise1.css</code>).
+2. Check that the CSS still shows up when you view the site in the browser.
+3. Make a change in <code>exercise1.css</code> and check that you can see that in the browser. (You might need to refresh the page a few times).</p>
+</div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="6_homework.md">
+	
+
+		<h2>Homework</h2>
+		<h3 id="finishing-off">Finishing off</h3>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+Finish off both CSS exercises from class. Check your solutions online:
+* Find the HTML2 repository on Code61’s github page.
+* In the <code>branch</code> dropdown (just above the list of files) select the <code>solution</code> branch.
+* Click on the files below to see the solution</p>
+</div>
+
+<h3 id="more-htmlcss">More HTML/CSS</h3>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Complete the whole of Project 3 on the <a href="https://dash.generalassemb.ly/projects">General Assembly Dash</a> site.
+2. Make some changes to your <code>first_site</code> based on what you’ve learnt. Make sure you add them to git, push them to github and check you can see them online.
+3. (Optional) Do the projects from the <a href="http://www.codecademy.com/tracks/web">Codecademy Web Track</a> Sections 7, 8 &amp; 9.
+4. (Optional) Read <a href="https://www.inkling.com/read/dreamweaver-cs6-missing-manual-david-sawyer-mcfarland-1st/chapter-4/understanding-links">this article</a> about absolute vs. relative links.</p>
+</div>
+
+<h3 id="get-your-domain-name-to-point-to-your-github-page">Get your domain name to point to your GitHub Page</h3>
+
+<p>The point of this exercise is to set up your domain name to point towards your new GitHub pages site.</p>
+
+<p>As GitHub hosts many different pages at their IP address, it isn’t quite as simple as pointing your domain address towards that IP address. There are two things you need to do to get your domain name working with your GitHub pages site:</p>
+
+<ol>
+  <li>Tell your domain registrar (e.g 123-reg or godaddy) to point your domain name towards GitHub’s IP address.</li>
+  <li>Tell GitHub that requests to your domain name should come to your site.</li>
+</ol>
+
+<p>Github explains this <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">here</a>.</p>
+
+<h5 id="pointing-your-domain-name-towards-github">Pointing your domain name towards GitHub</h5>
+
+<p>For the first bit you need to log in to your domain registrar and change the DNS settings. You want an <em>A-record</em> pointing to <code>204.232.175.78</code> (which is github.com). Note that it can take up to a couple of days for DNS changes to propagate.</p>
+
+<p>If you’re using 123-reg, your should log in, select your domain from the list, and click “Manage”. You should then go to “Manage DNS”.</p>
+
+<p><img src="/assets/dns_settings.png" alt="123-reg DNS Settings" /></p>
+
+<p>(The @ dns entry stands for the root or bare domain.)</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+Log in to your domain registrar and set an A-record to point towards GitHub.</p>
+</div>
+
+<p>Your changes won’t take effect immediately.</p>
+
+<h5 id="tell-github-to-expect-requests-for-your-domain-name">Tell github to expect requests for your domain name</h5>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Open Sublime Text and create a new file.
+2. Write your domain name on the first line of the new file e.g:</p>
+
+  <pre><code>     mydomain.com
+</code></pre>
+
+  <ol>
+    <li>Save that file as <code>CNAME</code> (uppercase, with no extension) in your <code>first_site</code> folder</li>
+    <li>Commit your change and then push to github.</li>
+  </ol>
+</div>
+
+	</div>
+
+</div>
+
+</div>
+
+
+
+
+  </div> <!-- /container -->
+
+
+</body>
+</html>

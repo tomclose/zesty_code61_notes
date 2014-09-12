@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Web Fundamentals 4</title>
+
+  
+
+  <meta name="viewport" content="width=device-width">
+  <!-- Twitter bootstrap basic styles -->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.css">
+
+
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="../css/syntax.css">
+  <!-- Google webfont link -->
+<link href='http://fonts.googleapis.com/css?family=Arvo:700|Titillium+Web:900' rel='stylesheet' type='text/css'>
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script src="../assets/jquery-1.10.0.js"></script>
+
+  <script type="text/javascript" src='../bootstrap/js/bootstrap.js'></script>
+  <script type="text/javascript" src='../assets/custom.js'></script>
+
+<body class="">
+
+  <div class="container">
+
+    <div class="page-header">
+  <h1>Web Fundamentals 4 <small>Collaborative Coding</small></h1>
+</div>
+
+<div class="tabbable tabs-left">
+<ul class="nav nav-tabs" id="myTab">
+	
+		
+		<li class="active"><a href="#1_collaboration_publishing.md" data-toggle="tab">Getting code from Github </a></li>
+		
+	
+		
+		<li><a href="#2_conflicts.md" data-toggle="tab">Conflicts </a></li>
+		
+	
+		
+		<li><a href="#3_collaborating_using_github.md" data-toggle="tab">Github collaboration </a></li>
+		
+	
+		
+		<li><a href="#4_joint_project.md" data-toggle="tab">Joint project </a></li>
+		
+	
+		
+		<li><a href="#5_command_line.md" data-toggle="tab">Meet the Command Line </a></li>
+		
+	
+		
+		<li><a href="#5_homework.md" data-toggle="tab">Homework </a></li>
+		
+	
+</ul>
+
+<div class="tab-content">
+
+	
+	<div class="tab-pane active" id="1_collaboration_publishing.md">
+	
+
+		<h2>Getting code from Github</h2>
+		<h3 id="git-recap">Git recap</h3>
+
+<h3 id="getting-code-from-github">Getting code from github</h3>
+
+<p>In previous sessions we’ve used git to pull code down from github. We’re going to start this session by doing the same again:</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Go to the command line and navigate to your <code>coding_course</code> folder
+2. Clone the project <a href="https://github.com/tomclose/cfgmt2013_first_site">https://github.com/tomclose/cfgmt2013_first_site</a>:</p>
+
+  <pre><code> 	 $ git clone https://github.com/tomclose/cfgmt2013_first_site toms_site
+</code></pre>
+
+</div>
+
+<p>You should now see a new file called <code>toms_site</code> in your <code>coding_course</code> folder, and be able to open <code>toms_site/index.html</code> in your browser. The clone operation has copied a local version of the repository onto your computer.</p>
+
+<p>Git will help you keep this local copy updated. If I’ve made some changes and pushed them up to github, you just need to run</p>
+
+<pre><code>$ git pull
+</code></pre>
+
+<p>to pull them down onto your laptop.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Open <code>toms_site/index.html</code> in Sublime Text
+2. Wait for me to make a change and push it to gihub
+3. Pull down the changes and make sure you can see them in your browser:</p>
+
+  <pre><code>	$ git pull
+</code></pre>
+</div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="2_conflicts.md">
+	
+
+		<h2>Conflicts</h2>
+		<p>The version on your laptop is stored in a fully functional git repository: you can make changes to the site and commit it if you want. What happens if we both make changes at the same time?</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Open <code>toms_site/index.html</code> in your code editor, and change the page heading (inside <code>&amp;lt;h1&amp;gt;</code>) to something of your choosing. (At the same time I’ll also make a change). When you’re done, commit your change to the local repository:</p>
+
+  <pre><code>    $ git add --all
+    $ git commit -m "Changed heading"
+</code></pre>
+
+  <ol>
+    <li>Wait while I push my own change to the <code>&amp;lt;h1&amp;gt;</code> element. </li>
+    <li>
+      <p>Pull down my changes</p>
+
+      <pre><code> $ git pull
+</code></pre>
+    </li>
+  </ol>
+
+</div>
+
+<p>You should now have a message telling you that you have a merge conflict. This is because our two changes have been made at the same time, so git is unabled to work out which is the up-to-date one to keep. If you look in your file you should see things that look like</p>
+
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &lt;h1 class="special"&gt;My Page&lt;/h1&gt;
+=======
+    &lt;h1 class="special"&gt;Tom C's page&lt;/h1&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; d76d5a62894057f9c5a4dce0fe5f25110eddd24f
+</code></pre>
+
+<p>To fix the merge conflict you need to edit this by hand, picking the version you want and then do:</p>
+
+<pre><code>$ git add --all
+$ git commit -m "Fixed conflicts"
+</code></pre>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Delete the conflict markers (<code>&amp;lt;&amp;lt;&amp;lt;&amp;lt;</code>, <code>=====</code>, <code>&amp;gt;&amp;gt;&amp;gt;&amp;gt;</code>) from <code>index.html</code> (using Sublime text)
+2. Delete the version of the heading that you don’t want.
+3. On the command line:</p>
+
+  <pre><code>    $ git add --all
+    $ git commit -m "Fixed conflicts"
+</code></pre>
+
+  <ol>
+    <li>
+      <p>To have a look at what you’ve just done:</p>
+
+      <pre><code> $ gitk --all
+</code></pre>
+
+      <p>or </p>
+
+      <pre><code> $ git log --pretty --graph --oneline
+</code></pre>
+
+      <p>You should see how the two versions branched and came back together.</p>
+    </li>
+  </ol>
+</div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="3_collaborating_using_github.md">
+	
+
+		<h2>Github collaboration</h2>
+		<p>There are a few options for collaborating with others using Git.</p>
+
+<h3 id="one-way-sharing"> One-way sharing</h3>
+
+<p>As we all know, one-way sharing isn’t really sharing at all. Even so, this is the easiest example to look at - in fact we’ve been doing it almost from the first session of the course.</p>
+
+<p>In one-way sharing, there is one ‘master’ repository on GitHub that everyone can read from, but only one person can write to:</p>
+
+<div class="row text-center" style="text-align: center;">
+<img src="/assets/git_one_way_share.png" />
+</div>
+
+<h3 id="forking">Forking</h3>
+
+<p>One of the options for sharing your changes with me, is for you to publish your repository too. I can then pull your changes down just as you pulled mine.</p>
+
+<div class="row" style="text-align: center;">
+<img src="/assets/git_forking.png" />
+</div>
+
+<p>Notice that this situation is symmetric - my repositories are equivalent to yours. This makes it a suitable model for many open source projects, where the project maintainer might change over time.</p>
+
+<p>Github makes this model easy by providing a ‘forking’ button. Forking is a quick an easy way make a copy of my repository on GitHub so that you can then pull and push to it.</p>
+
+<h3 id="sharing">Sharing</h3>
+
+<p>The other way or collaborating with git is the ‘sharing’ model: one person puts the repository on github and gives other people permissions, so you can all push to the same place.</p>
+
+<div class="row text-center" style="text-align: center;">
+<img src="/assets/git_sharing.png" />
+</div>
+
+<p>To do this on github, go to your forked landing page repository and click on ‘Settings’ on the right hand side. Then go to ‘Collaborators’ and add your team members’ github usernames. </p>
+
+<p><br /></p>
+
+<p>You can find out more about these different workflow option from the <a href="http://git-scm.com/book/en/Distributed-Git-Distributed-Workflows">Git book</a>.</p>
+
+	</div>
+
+	
+	<div class="tab-pane " id="4_joint_project.md">
+	
+
+		<h2>Joint project</h2>
+		<p>The purpose of this project is to create a shared html page to serve as a ‘cheat sheet’ for all the different commands you’ve learnt in the course so far (e.g. <code>ls</code>, <code>git add --all</code> etc.). You will need to be in groups of three. </p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Person A should set up a new project on their laptop:
+	1. Create a new folder called <code>group_cheatsheet</code> in your <code>coding_course</code> folder
+	2. Create a file in that folder called <code>index.html</code> with some simple html in it.
+2. Person A should then set it up as a git repository</p>
+
+  <pre><code>	$ cd group_cheatsheet
+	$ git init
+	$ git add --all
+	$ git commit -m "Initial import"
+</code></pre>
+
+  <ol>
+    <li>Person A creates a new repo on github. To do this you need to log in at <a href="http://github.com">github.com</a> and select “Create a new repo”. You should call the repository <code>group_cheatsheet</code>.</li>
+    <li>
+      <p>Person A should then push their code up to github following the instructions on github. You want to “Push an existing repository from the command line” - the instructions at the <strong>bottom</strong> of the page. You should end up pasting a command like</p>
+
+      <pre><code> # Warning: these commands won't work. You need copy the right ones from GitHub.
+ git remote add origin https://github.com/username/blah.git
+ git push -u origin master
+</code></pre>
+    </li>
+    <li>Person A then needs to add everyone else as collaborators by going to <code>Settings &gt; Collaborators</code> on the repo page</li>
+    <li>Everyone else should then clone the project:
+      <ol>
+        <li>Go to the repo’s github page</li>
+        <li>Copy the <code>ssh</code> link from the box on the page</li>
+        <li>
+          <p>In your <code>coding_course</code> folder do</p>
+
+          <pre><code> git clone paste_the_repo_link_here
+</code></pre>
+        </li>
+      </ol>
+    </li>
+    <li>Person B should then download <a href="http://getbootstrap.com/">Twitter Bootstrap</a> and put it in the <code>group_cheatsheet</code> folder</li>
+    <li>Meanwhile Person C should add more content to the page’s html</li>
+    <li>
+      <p>Person B should add their changes and push up to github:</p>
+
+      <pre><code>  git add .
+  git commit -m "Added twitter bootstrap"
+  git push
+</code></pre>
+    </li>
+    <li>
+      <p>Person C should then add their changes and try and push up:</p>
+
+      <pre><code> git add .
+ git commit -m "Edits to index.html"
+ git push
+</code></pre>
+    </li>
+    <li>
+      <p>This will probably fail, as C won’t have B’s changes. To fix this Person C needs to pull and merge (the merge will probably happen automatically if you haven’t changed the same files). They should then push again:</p>
+
+      <pre><code> git pull
+
+ # fix any merge conflicts if necessary, then add and commit the changes
+
+ git push
+</code></pre>
+    </li>
+    <li>Continue to work on the cheatsheet together!</li>
+  </ol>
+
+</div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="5_command_line.md">
+	
+
+		<h2>Meet the Command Line</h2>
+		<p>The command line is a way to interact with your computer programmatically. If you are doing any software development you will need to get to grips with using the command line, as many of the programs you will use will be run from the it, instead of by clicking an icon.</p>
+
+<p>Note: when giving you instructions for the command line we will precede them with a <code>$</code> to represent the command prompt e.g.</p>
+
+<pre><code>$ some_command
+</code></pre>
+
+<p><strong>You shouldn’t type the <code>$</code> sign - just the stuff after it.</strong> So for the above instruction you would just type <code>some_command</code> into the command line.</p>
+
+<h3 id="moving-around">Moving around</h3>
+
+<p>The first thing you will need to get used to is moving around. Start by printing the name of the directory you are in:</p>
+
+<pre><code>$ pwd
+</code></pre>
+
+<p>Then have a look at what’s in that directory ( <em>list</em> the contents):</p>
+
+<pre><code>$ ls
+</code></pre>
+
+<p>To move up a directory ( <em>change directory</em> ) do</p>
+
+<pre><code>$ cd ..
+</code></pre>
+
+<p>To move back into the folder you just left do</p>
+
+<pre><code>$ cd name_of_the_folder
+</code></pre>
+
+<p>Your commandline will help you: <kbd>tab</kbd> can often be used to auto-complete names of files, the up arrow can be used to cycle through previous commands that you have typed.</p>
+
+<h3 id="creating-a-directory">Creating a directory</h3>
+
+<p>You can do a lot more on the command line than just move around. We’ll be using the command line a lot over the course. For the time being we just need to create a folder:</p>
+
+<pre><code>$ mkdir coding_course
+</code></pre>
+
+<p>Note: choosing names without spaces makes command line navigation easier.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Open your command line:
+    * On a Mac open Terminal (Applications &gt; Terminal)
+    * On Windowns open Command Prompt with Ruby on Rails
+2. Find out where you are:</p>
+
+  <pre><code>    $ pwd
+</code></pre>
+
+  <ol>
+    <li>
+      <p>See what is in the same folder:</p>
+
+      <pre><code> $ ls
+</code></pre>
+    </li>
+    <li>
+      <p>If you are on a Mac move into <code>Documents</code>:</p>
+
+      <pre><code> $ cd Documents
+</code></pre>
+    </li>
+    <li>
+      <p>Create the folder for the coding course:</p>
+
+      <pre><code> $ mkdir coding_course
+</code></pre>
+    </li>
+    <li>
+      <p>Move into that folder:</p>
+
+      <pre><code> $ cd coding_course
+</code></pre>
+    </li>
+    <li>
+      <p>Move back up to the folder above</p>
+
+      <pre><code> $ cd ..
+</code></pre>
+    </li>
+    <li>
+      <p>Move back into the coding course folder. This time don’t type out coding_course - just type out the first few letters and hit <code>Tab</code>:</p>
+
+      <pre><code>$ cd coding_course
+</code></pre>
+    </li>
+    <li>
+      <p>In the Finder (Mac) or My Computer (Windows) find the folder that you just created.</p>
+    </li>
+  </ol>
+</div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="5_homework.md">
+	
+
+		<h2>Homework</h2>
+		<h3 id="tell-us-about-your-site">Tell us about your site</h3>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+Tell us about your first site by filling in <a href="https://docs.google.com/forms/d/1V8wA--rmXQ8KvPmpooLZEZPwl7Vp64-XRPlOea9rRlU/viewform">this form</a>. If you’re still having problems getting it to display online or pointing your url to it, ask in the forum!</p>
+</div>
+
+<h3 id="work-on-your-group-cheatsheet">Work on your group cheatsheet</h3>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+Continue to add information to your group cheatsheet. At the very least you should
+1. Have a section for the basic command line commands.
+2. Have a section for the basic git commands.
+3. Have each pushed to the shared repository at least twice by next week.</p>
+</div>
+
+<h3 id="learn-to-hate-your-track-pad">Learn to hate your track pad</h3>
+
+<p>From now on, try to touch your mouse/trackpad as little as often - it will make you quicker and more effective.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Practise using <code>Cmd-tab</code> (Mac) or <code>Ctrl-tab</code> (Windows) to move between programs.
+2. Practise using <code>Cmd-space</code> (Mac) or ?? (Windows) to open programs by typing their names.
+3. Practise using short cut keys:
+    - <code>Cmd-s</code> (Mac) or <code>Ctrl-s</code> (Windows) for saving
+    - <code>Cmd-r</code> (Mac) or <code>Ctrl-r</code> (Windows) to refresh the browser</p>
+</div>
+
+<h3 id="learn-to-love-your-editor">Learn to love your editor</h3>
+
+<p>Over the rest of the course you will be spending a lot of time in Sublime Text. Investing the time to learn to use it more effectively now will pay off!</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+(Optional) Take a look through the <a href="https://tutsplus.com/course/improve-workflow-in-sublime-text-2/">Sublime text screencasts</a> at Tuts+.</p>
+</div>
+
+	</div>
+
+</div>
+
+</div>
+
+
+
+
+  </div> <!-- /container -->
+
+
+</body>
+</html>
