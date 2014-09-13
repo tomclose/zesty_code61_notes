@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Further Web Programming with Ruby 3</title>
+  <title>Further Web Programming with Ruby</title>
 
   
 
@@ -33,26 +33,30 @@
   <div class="container">
 
     <div class="page-header">
-  <h1>Further Web Programming with Ruby 3 <small>Intro to MongoDB</small></h1>
+	<a href ="/contents/"><img src="/assets/code61_logo_66x66.png" ></a><h1>Further Web Programming with Ruby <small>Intro to MongoDB</small></h1>
 </div>
 
 <div class="tabbable tabs-left">
 <ul class="nav nav-tabs" id="myTab">
 	
 		
-		<li class="active"><a href="#1_intro_to_mongo.md" data-toggle="tab">About MongoDB </a></li>
+		<li class="active"><a href="#1_intro_to_mongo" data-toggle="tab">About MongoDB </a></li>
 		
 	
 		
-		<li><a href="#2_searching_and_sorting.md" data-toggle="tab">Searching and sorting </a></li>
+		<li><a href="#2_searching_and_sorting" data-toggle="tab">Searching and sorting </a></li>
 		
 	
 		
-		<li><a href="#3_mongo_with_sinatra.md" data-toggle="tab">Mongo with sinatra </a></li>
+		<li><a href="#3_Exercise_answers" data-toggle="tab">Exercise answers </a></li>
 		
 	
 		
-		<li><a href="#4_homework.md" data-toggle="tab">Homework </a></li>
+		<li><a href="#4_mongo_with_sinatra" data-toggle="tab">Mongo with sinatra </a></li>
+		
+	
+		
+		<li><a href="#5_homework" data-toggle="tab">Homework </a></li>
 		
 	
 </ul>
@@ -60,7 +64,7 @@
 <div class="tab-content">
 
 	
-	<div class="tab-pane active" id="1_intro_to_mongo.md">
+	<div class="tab-pane active" id="1_intro_to_mongo">
 	
 
 		<h2>About MongoDB</h2>
@@ -98,7 +102,7 @@
   <span class="n">field</span> <span class="ss">:events</span><span class="p">,</span>  <span class="ss">type</span><span class="p">:</span> <span class="nb">Array</span>
 
   <span class="k">def</span> <span class="nf">total_medals</span>
-    <span class="n">bronze</span> <span class="o">+</span> <span class="n">silver</span> <span class="o">+</span> <span class="n">bronze</span>
+    <span class="n">gold</span> <span class="o">+</span> <span class="n">silver</span> <span class="o">+</span> <span class="n">bronze</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 
@@ -196,7 +200,7 @@
 	</div>
 
 	
-	<div class="tab-pane " id="2_searching_and_sorting.md">
+	<div class="tab-pane " id="2_searching_and_sorting">
 	
 
 		<h2>Searching and sorting</h2>
@@ -262,7 +266,76 @@
 	</div>
 
 	
-	<div class="tab-pane " id="3_mongo_with_sinatra.md">
+	<div class="tab-pane " id="3_Exercise_answers">
+	
+
+		<h2>Exercise answers</h2>
+		<pre><code>1. How many athletes were there?
+2. How many women? How many men?
+3. Who was the oldest athlete?
+4. Who was the youngest?
+4. How many people won at least 1 gold?
+5. What was the average age? (Your answer should have decimal places..)
+6. Who got the most golds?
+7. Who was the 10th oldest athlete?
+</code></pre>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Athlete</span><span class="o">.</span><span class="n">count</span>
+<span class="c1">#=&gt; 10384 </span>
+
+<span class="no">Athlete</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:sex</span><span class="o">=&gt;</span><span class="s2">&quot;M&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+<span class="c1">#=&gt; 5756 </span>
+
+<span class="no">Athlete</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:sex</span><span class="o">=&gt;</span><span class="s2">&quot;F&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+<span class="c1">#=&gt; 4628 </span>
+
+<span class="no">Athlete</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="ss">:age</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">name</span>
+<span class="c1">#=&gt; &quot;Hiroshi Hoketsu&quot; </span>
+
+<span class="no">Athlete</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="ss">:age</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">name</span>
+<span class="c1">#=&gt; &quot;Adzo Kpossi&quot; </span>
+
+<span class="no">Athlete</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">:gold</span><span class="o">.</span><span class="n">gt</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+<span class="c1">#=&gt; 162 </span>
+ 
+<span class="no">Athlete</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="ss">:age</span><span class="p">)</span><span class="o">/</span><span class="no">Athlete</span><span class="o">.</span><span class="n">count</span><span class="o">.</span><span class="n">to_f</span>
+<span class="c1">#=&gt; 26.06885593220339</span>
+
+<span class="no">Athlete</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="ss">:gold</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
+   <span class="nb">puts</span> <span class="n">a</span><span class="o">.</span><span class="n">name</span>
+   <span class="nb">puts</span> <span class="n">a</span><span class="o">.</span><span class="n">gold</span>
+<span class="k">end</span>
+<span class="c1">#=&gt;Yannick Agnel</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Bo Bae Ki</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Elisa Di Francisca</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Gabrielle Douglas</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Missy Franklin</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Michael Jung</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Ryan Lochte</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Michael Phelps</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Allison Schmitt</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Dana Vollmer</span>
+<span class="c1">#=&gt;2</span>
+<span class="c1">#=&gt;Shiwen Ye</span>
+<span class="c1">#=&gt;2</span>
+
+ <span class="no">Athlete</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="ss">:age</span><span class="o">.</span><span class="n">desc</span><span class="p">)</span><span class="o">[</span><span class="mi">9</span><span class="o">].</span><span class="n">name</span>
+ <span class="o">=&gt;</span> <span class="s2">&quot;Irada Ashumova&quot;</span></code></pre></div>
+
+
+	</div>
+
+	
+	<div class="tab-pane " id="4_mongo_with_sinatra">
 	
 
 		<h2>Mongo with sinatra</h2>
@@ -327,10 +400,11 @@
 
 <div class="exercise alert alert-info">
   <p><strong>Task:</strong> 
-1. Modify the application so that the ‘oldest’ link displays the 20 oldest athletes.
-2. Make changes so that the ‘youngest’ link displays the 20 youngest athletes.
-3. Add at least 2 more stats pages of your choosing.
-4. (Optional) Return to <code>sinatra_c3s4</code>. Set your app up with mongoid, so that when people sign up it stores their names and emails. You will need to:
+1. Run app.rb and take a look at the site in your browser. 
+2. Modify the application so that the ‘oldest’ link displays the 20 oldest athletes.
+3. Make changes so that the ‘youngest’ link displays the 20 youngest athletes.
+4. Add at least 2 more stats pages of your choosing.
+5. (Optional) Return to <code>sinatra_c3s4</code>. Set your app up with mongoid, so that when people sign up it stores their names and emails. You will need to:
     * Follow the steps above to add mongoid to the sinatra app.
     * Create a mongoid-enabled <code>User</code> class, to store the data.
     * Add a <code>/list</code> route for admins to see the list of people who’ve signed up.
@@ -341,7 +415,7 @@
 	</div>
 
 	
-	<div class="tab-pane " id="4_homework.md">
+	<div class="tab-pane " id="5_homework">
 	
 
 		<h2>Homework</h2>

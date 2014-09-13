@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Web Programming with Ruby 4</title>
+  <title>Introduction to Ruby</title>
 
   
 
@@ -33,38 +33,42 @@
   <div class="container">
 
     <div class="page-header">
-  <h1>Web Programming with Ruby 4 <small>Hashes and sending emails</small></h1>
+	<a href ="/contents/"><img src="/assets/code61_logo_66x66.png" ></a><h1>Introduction to Ruby <small>Hashes and sending emails</small></h1>
 </div>
 
 <div class="tabbable tabs-left">
 <ul class="nav nav-tabs" id="myTab">
 	
 		
-		<li class="active"><a href="#1_introducing_hash.md" data-toggle="tab">Hashes </a></li>
+		<li class="active"><a href="#1_introducing_hash" data-toggle="tab">Hashes </a></li>
 		
 	
 		
-		<li><a href="#2_summary.md" data-toggle="tab">Exercise summary </a></li>
+		<li><a href="#2_summary" data-toggle="tab">Exercise summary </a></li>
 		
 	
 		
-		<li><a href="#3_symbols.md" data-toggle="tab">Symbols </a></li>
+		<li><a href="#3_symbols" data-toggle="tab">Symbols </a></li>
 		
 	
 		
-		<li><a href="#4_email.md" data-toggle="tab">Sending email </a></li>
+		<li><a href="#4_email" data-toggle="tab">Sending email </a></li>
 		
 	
 		
-		<li><a href="#5_email_templates.md" data-toggle="tab">Email templates </a></li>
+		<li><a href="#5_email_templates" data-toggle="tab">Email templates </a></li>
 		
 	
 		
-		<li><a href="#6_homework.md" data-toggle="tab">Homework </a></li>
+		<li><a href="#6_homework" data-toggle="tab">Homework </a></li>
 		
 	
 		
-		<li><a href="#8_hash_array_conversion.md" data-toggle="tab">(Ext) Arrays and back </a></li>
+		<li><a href="#8_hash_array_conversion" data-toggle="tab">(Ext) Arrays and back </a></li>
+		
+	
+		
+		<li><a href="#9_hash_array_conversion_solution" data-toggle="tab">(Ext) Exercise summary </a></li>
 		
 	
 </ul>
@@ -72,7 +76,7 @@
 <div class="tab-content">
 
 	
-	<div class="tab-pane active" id="1_introducing_hash.md">
+	<div class="tab-pane active" id="1_introducing_hash">
 	
 
 		<h2>Hashes</h2>
@@ -189,7 +193,7 @@
 	</div>
 
 	
-	<div class="tab-pane " id="2_summary.md">
+	<div class="tab-pane " id="2_summary">
 	
 
 		<h2>Exercise summary</h2>
@@ -294,7 +298,7 @@
 	</div>
 
 	
-	<div class="tab-pane " id="3_symbols.md">
+	<div class="tab-pane " id="3_symbols">
 	
 
 		<h2>Symbols</h2>
@@ -326,7 +330,7 @@
 	</div>
 
 	
-	<div class="tab-pane " id="4_email.md">
+	<div class="tab-pane " id="4_email">
 	
 
 		<h2>Sending email</h2>
@@ -381,7 +385,7 @@
 	</div>
 
 	
-	<div class="tab-pane " id="5_email_templates.md">
+	<div class="tab-pane " id="5_email_templates">
 	
 
 		<h2>Email templates</h2>
@@ -415,7 +419,7 @@ The FruitApp team
 	</div>
 
 	
-	<div class="tab-pane " id="6_homework.md">
+	<div class="tab-pane " id="6_homework">
 	
 
 		<h2>Homework</h2>
@@ -428,7 +432,7 @@ The FruitApp team
 	</div>
 
 	
-	<div class="tab-pane " id="8_hash_array_conversion.md">
+	<div class="tab-pane " id="8_hash_array_conversion">
 	
 
 		<h2>(Ext) Arrays and back</h2>
@@ -465,7 +469,7 @@ The FruitApp team
 
 <span class="n">h1</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
 
-<span class="n">h2</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">3</span><span class="o">]]</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">3</span><span class="o">]]]</span>
 
 
 <span class="c1"># Converting to arrays (and back?)</span>
@@ -485,6 +489,41 @@ The FruitApp team
 <span class="c1"># How would you combine keys and values back into h?</span></code></pre></div>
 
 </div>
+
+	</div>
+
+	
+	<div class="tab-pane " id="9_hash_array_conversion_solution">
+	
+
+		<h2>(Ext) Exercise summary</h2>
+		<p>It’s easy to convert a <code>hash</code> into an <code>array</code>.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">to_a</span>
+<span class="c1"># =&gt; [[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]</span></code></pre></div>
+
+<p>To convert back from an <code>array</code> to a <code>hash</code>, use </p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span><span class="o">=</span><span class="no">Hash</span><span class="o">[</span><span class="n">a</span><span class="o">]</span>
+<span class="c1"># =&gt; {&quot;a&quot;=&gt;1, &quot;b&quot;=&gt;2, &quot;c&quot;=&gt;3}</span></code></pre></div>
+
+<p>You can unpack a <code>hash</code> into its keys and values with the <code>.keys</code> and <code>.values</code> methods</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="n">keys</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">keys</span>
+<span class="c1">#=&gt; [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;] </span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">values</span>
+<span class="c1">#=&gt; [1, 2, 3]</span></code></pre></div>
+
+<p>and put it back together with </p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span><span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">]</span>
+
+<span class="c1"># =&gt; {&quot;one&quot;=&gt;1, &quot;two&quot;=&gt;2, &quot;three&quot;=&gt;3}</span></code></pre></div>
+
 
 	</div>
 

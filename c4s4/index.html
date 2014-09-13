@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Intro to Rails 1</title>
+  <title>Further Web Programming with Ruby</title>
 
   
 
@@ -33,34 +33,30 @@
   <div class="container">
 
     <div class="page-header">
-  <h1>Intro to Rails 1 <small>Riding the rails</small></h1>
+	<a href ="/contents/"><img src="/assets/code61_logo_66x66.png" ></a><h1>Further Web Programming with Ruby <small>Riding the rails</small></h1>
 </div>
 
 <div class="tabbable tabs-left">
 <ul class="nav nav-tabs" id="myTab">
 	
 		
-		<li class="active"><a href="#1_better_ways.md" data-toggle="tab">Better ways ... </a></li>
+		<li class="active"><a href="#2_intro_to_rails" data-toggle="tab">Intro to Rails </a></li>
 		
 	
 		
-		<li><a href="#2_intro_to_rails.md" data-toggle="tab">Intro to Rails </a></li>
+		<li><a href="#3_mvc" data-toggle="tab">Model/View/Controller </a></li>
 		
 	
 		
-		<li><a href="#3_mvc.md" data-toggle="tab">Model/View/Controller </a></li>
+		<li><a href="#4_views" data-toggle="tab">Views </a></li>
 		
 	
 		
-		<li><a href="#4_views.md" data-toggle="tab">Views </a></li>
+		<li><a href="#5_the_console" data-toggle="tab">Rails console </a></li>
 		
 	
 		
-		<li><a href="#5_the_console.md" data-toggle="tab">Rails console </a></li>
-		
-	
-		
-		<li><a href="#6_further_resources.md" data-toggle="tab">Rails resources </a></li>
+		<li><a href="#6_further_resources" data-toggle="tab">Rails resources </a></li>
 		
 	
 </ul>
@@ -68,20 +64,7 @@
 <div class="tab-content">
 
 	
-	<div class="tab-pane active" id="1_better_ways.md">
-	
-
-		<h2>Better ways ...</h2>
-		<h3 id="jekyll">Jekyll</h3>
-
-<h3 id="sass">Sass</h3>
-
-<h3 id="rails">Rails</h3>
-
-	</div>
-
-	
-	<div class="tab-pane " id="2_intro_to_rails.md">
+	<div class="tab-pane active" id="2_intro_to_rails">
 	
 
 		<h2>Intro to Rails</h2>
@@ -138,7 +121,7 @@ vendor
 <pre><code>$ rails generate scaffold task name:string due_date:date description:text project:string completed:boolean
 </code></pre>
 
-<p><code>rails generate scaffold</code> tells rails to set up everything to do with the <code>task</code> model that we’re creating (more on this later). The name of the thing that you’re creating (<code>task</code> in this case) should always be <strong>singular</strong>. The final part of the command <code>name:string due_date:date description:text</code> tells rails what attributes the model should have and what type they are. The possibilities for the types are:</p>
+<p>The <code>rails generate scaffold</code> command tells rails to set up everything to do with the <code>task</code> model that we’re creating (more on this later). The name of the thing that you’re creating (<code>task</code> in this case) should always be <strong>singular</strong>. The final part of the command <code>name:string due_date:date description:text</code> tells rails what attributes the model should have and what type they are. The possibilities for the types are:</p>
 
 <pre><code>:primary_key, :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean
 </code></pre>
@@ -173,7 +156,7 @@ vendor
       <pre><code> $ cd project_manager
  $ git init
  $ git add --all
- $ git commit -m "Initial import"
+ $ git commit -m 'Initial import'
 </code></pre>
     </li>
     <li>
@@ -193,7 +176,7 @@ vendor
       <p>Add everything to git:</p>
 
       <pre><code> $ git add --all
- $ git commit -m "Created tasks."
+ $ git commit -m 'Created tasks'
 </code></pre>
     </li>
     <li>Have a look in <code>app/controllers</code> and <code>app/views/tasks</code> and see if you can figure out what is going on.</li>
@@ -203,7 +186,7 @@ vendor
 	</div>
 
 	
-	<div class="tab-pane " id="3_mvc.md">
+	<div class="tab-pane " id="3_mvc">
 	
 
 		<h2>Model/View/Controller</h2>
@@ -252,7 +235,7 @@ vendor
 	</div>
 
 	
-	<div class="tab-pane " id="4_views.md">
+	<div class="tab-pane " id="4_views">
 	
 
 		<h2>Views</h2>
@@ -337,7 +320,7 @@ vendor
 	</div>
 
 	
-	<div class="tab-pane " id="5_the_console.md">
+	<div class="tab-pane " id="5_the_console">
 	
 
 		<h2>Rails console</h2>
@@ -402,7 +385,7 @@ vendor
 	</div>
 
 	
-	<div class="tab-pane " id="6_further_resources.md">
+	<div class="tab-pane " id="6_further_resources">
 	
 
 		<h2>Rails resources</h2>
