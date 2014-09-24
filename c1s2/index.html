@@ -40,11 +40,7 @@
 <ul class="nav nav-tabs" id="myTab">
 	
 		
-		<li class="active"><a href="#1_using_git" data-toggle="tab">Intro to Git </a></li>
-		
-	
-		
-		<li><a href="#2_pushing_to_github" data-toggle="tab">Pushing code to Github </a></li>
+		<li class="active"><a href="#1_recap" data-toggle="tab">Recap from last time </a></li>
 		
 	
 		
@@ -68,226 +64,46 @@
 <div class="tab-content">
 
 	
-	<div class="tab-pane active" id="1_using_git">
+	<div class="tab-pane active" id="1_recap">
 	
 
-		<h2>Intro to Git</h2>
-		<p>Git is a version control system. It allows you to keep the entire history of your code, and makes it easy to share and collaborate with others.</p>
-
-<p>To use git you need to create a <strong>Git repository</strong>. You can think of a git repository like this:</p>
-
-<p><img src="/assets/basic_git.png" alt="Basic git" /></p>
+		<h2>Recap from last time</h2>
+		<h3 id="htmlcss">HTML/CSS</h3>
 
 <ul>
-  <li>A repository contains lots of <strong>commits</strong>. Each commit is essentially a different version of your files.</li>
-  <li>Commits can be organised into <strong>branches</strong>. A repository can contain many different branches. Branches are often used to develop new application features - that way the main codebase still works while the feature is being developed, and the new code can be <em>merged</em> in when it’s working.</li>
-  <li>Branches have names, so you can keep track of them. When you first set up a repository, you’ll just have one branch and it will have the default name - <strong>master</strong>.</li>
+  <li>Webpage is just a collection of files: HTML, CSS &amp; Javascript.</li>
+  <li>We can edit these files locally.</li>
+  <li>We can create them locally (using a text editor) and view then in a
+browser.</li>
 </ul>
 
-<h3 id="what-does-a-git-repository-look-like">What does a git repository look like?</h3>
+<h3 id="command-line">Command line</h3>
 
-<p>On your laptop, a git repository is just a <strong>special type of folder</strong>. Any folder can be made into a git repository (but not all folders should - e.g. don’t make your entire documents directory into a git repository, you’ll run into problems). You’ll normally make a new git repository for each coding project you work on.</p>
-
-<p>If you look inside the folder, you won’t see all the different versions stored there (they are actually there - just stored inside a hidden folder called <code>.git</code>) - you’ll only see the files that are in your <strong>working copy</strong>. Normally this working copy will contain the files from the last commit on the master branch, along with any changes you’ve made.</p>
-
-<h3 id="making-a-commit">Making a commit</h3>
-
-<p>To save some changes into the repository you need to create a commit. When you create a commit you get to write a message, to help remind yourself (and others) what changes you made (and why you made them). Once you’ve created a commit, you’ll be able to come back to this version of your code at any point in the future.</p>
-
-<p>Adding files to a git repository is actually a two-stage process: first you have to <strong>add</strong> them to something called the <strong>index</strong> and then you have to <strong>commit</strong> them. This is useful when you get more advanced, but we’ll usually do those things together for the time being.</p>
-
-<p><img src="/assets/index_working_tree.png" alt="Index and working tree" /></p>
+<ul>
+  <li><code>ls</code></li>
+  <li><code>cd coding_course</code></li>
+  <li><code>cd ..</code></li>
+</ul>
 
 <div class="exercise alert alert-info">
   <p><strong>Task:</strong> 
-1. Set up your <code>first_site</code> folder as a git repository.
-2. <strong>Add</strong> your work to the index.
-3. <strong>Commit</strong> your work to the repository, with a message e.g. “Initial import”
-4. Make some change to index.html (in Sublime Text)      <br />
-5. <strong>Add</strong> your changes to the index.
-6. <strong>Commit</strong> them to the repository.</p>
+1. Open the command line (‘Terminal’ on a mac, ‘Command prompt with Ruby
+   on Rails’ on windows)
+2. Use <code>cd</code> and <code>ls</code> to navigate to your <code>coding_course</code> folder.</p>
 </div>
 
-<h3 id="git-with-sourcetree">Git with SourceTree</h3>
-
-<h4 id="creating-a-git-repository">Creating a git repository</h4>
-
-<ol>
-  <li>Open SourceTree</li>
-  <li>Select File &gt; New / Clone</li>
-  <li>Select the ‘New’ option</li>
-  <li>Navigate to the folder you want to make into a git repository.</li>
-</ol>
-
-<h4 id="adding-to-the-index">Adding to the index</h4>
-
-<ol>
-  <li>Select all the files in the working tree section.</li>
-  <li>Click the “Add” button at the top.</li>
-  <li>You should see the files move to the ‘Index’ section</li>
-</ol>
-
-<h4 id="committing-to-the-repository">Committing to the repository</h4>
-
-<ol>
-  <li>Once you have files in your ‘Index’ section, click on ‘Commit’.</li>
-  <li>Write a commit message explain what you’ve done (and maybe why).</li>
-  <li>Click “Commit”</li>
-</ol>
-
-<h3 id="git-with-the-command-line">Git with the command line</h3>
-
-<h4 id="creating-a-git-repository-1">Creating a git repository</h4>
-
-<ol>
-  <li>Using the command line, navigate to the folder you want to make into a repository.</li>
-  <li>
-    <p><strong>Inside the target folder</strong> run the command</p>
-
-    <pre><code> git init
-</code></pre>
-  </li>
-  <li>
-    <p>To check this worked run the command</p>
-
-    <pre><code> git status
-</code></pre>
-  </li>
-</ol>
-
-<h4 id="adding-to-the-index-1">Adding to the index</h4>
-
-<ol>
-  <li>
-    <p>Inside the folder, run the command</p>
-
-    <pre><code> git add --all
-</code></pre>
-  </li>
-  <li>
-    <p>To check this worked run the command</p>
-
-    <pre><code> git status
-</code></pre>
-  </li>
-</ol>
-
-<h4 id="committing-to-the-repository-1">Committing to the repository</h4>
-
-<ol>
-  <li>
-    <p>Inside the folder, run the command</p>
-
-    <pre><code> git commit -m "write your message here"
-</code></pre>
-  </li>
-  <li>
-    <p>To check this worked run the command</p>
-
-    <pre><code> git status
-</code></pre>
-  </li>
-</ol>
-
-
-	</div>
-
-	
-	<div class="tab-pane " id="2_pushing_to_github">
-	
-
-		<h2>Pushing code to Github</h2>
-		<p>Github is a site which will host a git repo online for you, making it easy to collaborate with others. We’ll now see how to put some code online.</p>
-
-<h3 id="aside-serving-a-site-via-github-pages">Aside: serving a site via Github Pages</h3>
-
-<p>Normally when we push code up to github, it just sits there for others to see and contribute to. The code we’re about to push up happens to be the code for a website. Instead of the files just sitting there, we want github to <em>serve</em> them as a website. The way github does this is through its <a href="http://pages.github.com/">github pages</a>.</p>
-
-<p>There are several ways of getting GitHub to publish your site as a GitHub page. We’re going to use a simple trick: in the branches panel of the GitHub app, change the name of the current branch from <code>master</code> to <code>gh-pages</code>.</p>
-
-<div class="alert alert-warning">If you haven't verified your email with github (you'll see a warning at the top of the screen when you log in). Your GitHub won't serve your page at all. Make sure you've verified you email address, before continuing!</div>
-
-<h3 id="pushing-code-up-to-github">Pushing code up to github</h3>
-
-<p>Go to github, login, and click “Create New Repo” in the top left hand corner.</p>
-
-<p><img src="/assets/create_repo.png" alt="Creating a repo on GitHub" /></p>
-
-<p>Follow the instructions, calling it something like <code>first_site</code>. <strong>Do not</strong> click the box which says ‘Create a readme with this repository’. You’ll get to a page when it’ll describe how to get your code online. You want to follow the instructions for “Pushing an existing repository to github”.</p>
+<h3 id="something-new">Something new</h3>
 
 <div class="exercise alert alert-info">
   <p><strong>Task:</strong> 
-1. Log in to GitHub and check you’ve verified your email address.
-2. Change the name of your master branch to ‘gh-pages’.
-3. On github create a new repository called ‘first_site’.
-4. Push your code up to github.
-3. On Github check you can see your <code>first_site</code> code.
-4. On the code page on github, click on Settings. It should tell you (about half way down) the url where they’ve published your site. Have a look to see whether you can see it!
-5. (If you finish early) Make a change to <code>index.html</code> in Sublime Text. Add and commit the change to the repository and then push it to GitHub. Make sure you can see the change in the code on GitHub and also in the published page.</p>
+1. Make sure you’re in your <code>coding_course</code> folder.
+2. Do an <code>ls</code>.
+3. Type <code>git clone https://github.com/code61/html2.git</code>
+4. Do an <code>ls</code>.</p>
 </div>
 
-<h3 id="git-with-source-tree">Git with source tree</h3>
-
-<h4 id="change-the-branch-name-to-gh-pages">Change the branch name to ‘gh-pages’</h4>
-
-<ol>
-  <li>Go to the branches section on the right hand side.</li>
-  <li>Right-click on the name and select ‘rename’.</li>
-</ol>
-
-<h4 id="pushing-to-github-for-the-first-time">Pushing to github for the first time</h4>
-
-<ol>
-  <li>In the ‘Repository’ menu, click ‘Add remote’.</li>
-  <li>Copy the git url (from the bottom right) on github, and copy it into the source tree ‘URL/path’ box.</li>
-</ol>
-
-<h4 id="pushing-for-a-second-time">Pushing for a second time</h4>
-
-<h3 id="git-with-the-command-line">Git with the command line</h3>
-
-<h4 id="change-the-branch-name-to-gh-pages-1">Change the branch name to ‘gh-pages’</h4>
-
-<ol>
-  <li>Using the command line, navigate to the repository folder.</li>
-  <li>
-    <p>Run the command:</p>
-
-    <pre><code> git branch -m gh-pages
-</code></pre>
-  </li>
-  <li>
-    <p>To check this worked, run the command:</p>
-
-    <pre><code> git branch -a
-</code></pre>
-  </li>
-</ol>
-
-<h4 id="pushing-to-github-for-the-first-time-1"> Pushing to github for the first time</h4>
-
-<p>We’re assiming here that you’ve just created your repository and are on the github new repository screen.</p>
-
-<p><img src="/assets/push_repo_github.png" alt="Push repo to GitHub" /></p>
-
-<p>If you’ve set up ssh keys, go for the ssh option, if not, go for https. You should end up doing something like:</p>
-
-<pre><code>$ git remote add origin git@github.com/yourusername/first_site.git
-$ git push -u origin master
-</code></pre>
-
-<p>You might now be prompted to add your github username and password (if you’re doing the https method). If all goes well, when you go to github you should see the <code>first_site</code> folder containing your html file.</p>
-
-<h4 id="pushing-to-github-for-a-second-time">Pushing to github for a second time</h4>
-
-<ol>
-  <li>
-    <p>In the repository folder, run the command</p>
-
-    <pre><code> git push
-</code></pre>
-  </li>
-</ol>
+<p>You just used git to get the code for the next exercise onto your
+laptop!</p>
 
 	</div>
 
@@ -576,51 +392,6 @@ Finish off both CSS exercises from class. Check your solutions online:
 4. (Optional) Read <a href="https://www.inkling.com/read/dreamweaver-cs6-missing-manual-david-sawyer-mcfarland-1st/chapter-4/understanding-links">this article</a> about absolute vs. relative links.</p>
 </div>
 
-<h3 id="get-your-domain-name-to-point-to-your-github-page">Get your domain name to point to your GitHub Page</h3>
-
-<p>The point of this exercise is to set up your domain name to point towards your new GitHub pages site.</p>
-
-<p>As GitHub hosts many different pages at their IP address, it isn’t quite as simple as pointing your domain address towards that IP address. There are two things you need to do to get your domain name working with your GitHub pages site:</p>
-
-<ol>
-  <li>Tell your domain registrar (e.g 123-reg or godaddy) to point your domain name towards GitHub’s IP address.</li>
-  <li>Tell GitHub that requests to your domain name should come to your site.</li>
-</ol>
-
-<p>Github explains this <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">here</a>.</p>
-
-<h5 id="pointing-your-domain-name-towards-github">Pointing your domain name towards GitHub</h5>
-
-<p>For the first bit you need to log in to your domain registrar and change the DNS settings. You want an <em>A-record</em> pointing to <code>204.232.175.78</code> (which is github.com). Note that it can take up to a couple of days for DNS changes to propagate.</p>
-
-<p>If you’re using 123-reg, your should log in, select your domain from the list, and click “Manage”. You should then go to “Manage DNS”.</p>
-
-<p><img src="/assets/dns_settings.png" alt="123-reg DNS Settings" /></p>
-
-<p>(The @ dns entry stands for the root or bare domain.)</p>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-Log in to your domain registrar and set an A-record to point towards GitHub.</p>
-</div>
-
-<p>Your changes won’t take effect immediately.</p>
-
-<h5 id="tell-github-to-expect-requests-for-your-domain-name">Tell github to expect requests for your domain name</h5>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. Open Sublime Text and create a new file.
-2. Write your domain name on the first line of the new file e.g:</p>
-
-  <pre><code>     mydomain.com
-</code></pre>
-
-  <ol>
-    <li>Save that file as <code>CNAME</code> (uppercase, with no extension) in your <code>first_site</code> folder</li>
-    <li>Commit your change and then push to github.</li>
-  </ol>
-</div>
 
 	</div>
 
