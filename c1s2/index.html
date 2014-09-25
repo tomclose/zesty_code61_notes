@@ -52,6 +52,10 @@
 		
 	
 		
+		<li><a href="#5_push_to_github" data-toggle="tab">Pushing to GitHub </a></li>
+		
+	
+		
 		<li><a href="#5_separate_css_file" data-toggle="tab">External stylesheets </a></li>
 		
 	
@@ -240,6 +244,105 @@ laptop!</p>
 3. Continue until your page looks like <code>html2/exercise2_solution.png</code></p>
 </div>
 
+
+	</div>
+
+	
+	<div class="tab-pane " id="5_push_to_github">
+	
+
+		<h2>Pushing to GitHub</h2>
+		<p>Git is a version control system. It allows you to keep the entire history of your code, and makes it easy to share and collaborate with others.</p>
+
+<h3 id="using-git">Using git</h3>
+
+<p>Using git is really easy:</p>
+
+<ol>
+  <li>Set up a folder to be a <em>git repo</em>. This tells git to track all changes in that folder.</li>
+  <li>After you’ve made some changes, save them into the repository.</li>
+  <li>Once you’ve saved the changes push them up to github.</li>
+</ol>
+
+<p>The first point is important: <em>git works on a folder level</em>. It tracks all the changes you make to files within a given folder.</p>
+
+<h3 id="actually-using-git">Actually using git</h3>
+
+<p>Actually using git is a bit harder. It’s a very powerful tool and pretty complex to get started with. To make things simpler, we’re going to use a tool called <code>gitgit</code>.</p>
+
+<p>To install gitgit open the command line and type the following:
+<code>shell
+gem install gitgit
+</code></p>
+
+<p>To see if this worked, type
+<code>shell
+gitgit
+</code>
+You should see a list of gitgit commands something like this:
+<code>shell
+$ gitgit
+Commands:
+  gitgit help [COMMAND]  # Describe available commands or one specific command
+  gitgit init            # Initialise a git repo
+  gitgit lg              # Show your recent saves
+  gitgit push            # Push your changes to github
+  gitgit save            # Save you changes to the repo
+  gitgit status          # See what changes you've made since you last save
+</code>
+If it didn’t work, you might need to do
+<code>shell
+sudo gem install gitgit
+</code>
+and type your password.</p>
+
+<p>You also might need to do
+<code>shell
+rbenv rehash
+</code>
+If in doubt contact a teaching assistant!</p>
+
+<h3 id="using-gitgit">Using gitgit</h3>
+
+<p>To <strong>make a folder into a git repository</strong>:
+<code>shell
+gitgit init
+</code>
+then follow the instructions. You’ll only need to do this once for each folder you want to make into a repository.</p>
+
+<p>After you’ve made some changes to your files and saved them, you can <strong>save them into your repo</strong> by typing:
+<code>shell
+gitgit save
+</code></p>
+
+<p>Finally, to push your code up to github you can do
+<code>shell
+gitgit push
+</code>
+Before you do this, you will need to setup your repo with github.</p>
+
+<h3 id="setting-up-your-repo-with-github">Setting up your repo with github</h3>
+
+<p>Go to github, login, and click “Create New Repo” in the top left hand corner.</p>
+
+<p><img src="/assets/create_repo.png" alt="Creating a repo on GitHub" /></p>
+
+<p>Follow the instructions, calling it something like <code>first_site</code>. <strong>Do not</strong> click the box which says ‘Create a readme with this repository’. You’ll get to a page when it’ll describe how to get your code online. You want to follow the instructions for “Pushing an existing repository to github”.</p>
+
+<h3 id="pushing-your-code-to-github">Pushing your code to github</h3>
+
+<p>We will now set up your <code>first_site</code> folder to use git and push it up to github.</p>
+
+<div class="exercise alert alert-info">
+  <p><strong>Task:</strong> 
+1. Navigate to your first_site folder using cd and ls.
+2. Make it into a git repo: “gitgit init”
+3. Save all the work you’ve done so far: “gitgit save”
+4. Log in to GitHub.
+5. On github create a new repository called ‘first_site’. DO NOT click the box which says ‘Create a readme’.
+6. Copy and paste the instructions it gives you into the command line. You are ‘Pushing an existing repository to github’.
+7. Go back to github and refresh the page. You should see your code.</p>
+</div>
 
 	</div>
 
