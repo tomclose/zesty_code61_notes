@@ -72,45 +72,42 @@
 	
 
 		<h2>Recap from last time</h2>
-		<h3 id="htmlcss">HTML/CSS</h3>
+		
+<h3 id="htmlcss">HTML/CSS</h3>
 
 <ul>
-  <li>Webpage is just a collection of files: HTML, CSS &amp; Javascript.</li>
-  <li>We can edit these files locally.</li>
-  <li>We can create them locally (using a text editor) and view then in a
-browser.</li>
+<li>Webpage is just a collection of files: HTML, CSS &amp; Javascript.</li>
+
+<li>We can edit these files locally.</li>
+
+<li>We can create them locally (using a text editor) and view then in a browser.</li>
 </ul>
 
-<h3 id="command-line">Command line</h3>
+<h3 id="command_line">Command line</h3>
 
 <ul>
-  <li><code>ls</code> - list the files in the current directory</li>
-  <li><code>cd coding_course</code> - move into the ‘coding_course’ directory</li>
-  <li><code>cd ..</code> - move up a level</li>
-</ul>
+<li><code>ls</code> - list the files in the current directory</li>
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> </p>
-  <ol>
+<li><code>cd coding_course</code> - move into the ‘coding_course’ directory</li>
+
+<li><code>cd ..</code> - move up a level</li>
+</ul>
+<div class='exercise alert alert-info'><strong>Task:</strong> 
+<ol>
  <li>Open the command line ('Terminal' on a mac, 'Command prompt with Ruby on Rails' on windows)</li>
  <li>Use cd and ls to navigate to your coding_course folder.</li>
 </ol>
 </div>
-
-<h3 id="something-new">Something new</h3>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> </p>
-  <ol>
+<h3 id="something_new">Something new</h3>
+<div class='exercise alert alert-info'><strong>Task:</strong> 
+<ol>
   <li>Make sure you're in your coding_course folder.</li>
   <li>Do an ls.</li>
   <li>Type git clone https://github.com/code61/html2.git</li>
   <li>Do an ls.</li>
 </ol>
 </div>
-
-<p>You just used git to get the code for the next exercise onto your
-laptop!</p>
+<p>You just used git to get the code for the next exercise onto your laptop!</p>
 
 	</div>
 
@@ -119,57 +116,55 @@ laptop!</p>
 	
 
 		<h2>CSS</h2>
-		<p>Last time we looked at HTML, and saw how this was used to mark up the information in a webpage. Right now, your HTML pages don’t look very good, as you haven’t given any styling information. The way to do this is using CSS (Cascading Style Sheets).</p>
+		
+<p>Last time we looked at HTML, and saw how this was used to mark up the information in a webpage. Right now, your HTML pages don’t look very good, as you haven’t given any styling information. The way to do this is using CSS (Cascading Style Sheets).</p>
 
 <p>CSS is a way of separating the way your page looks from the content that it displays. As an extreme example of this check out <a href="http://www.csszengarden.com/">CSS Zen Garden</a> - by clicking on the links you completely change how the site looks, but the html remains unchanged.</p>
 
 <p>There are a few ways to include CSS in an HTML file:</p>
 
 <ol>
-  <li>Put the css inline in the html.</li>
-  <li>Put the css in a <code>&lt;style&gt;..&lt;/style&gt;</code> section in the <code>&lt;head&gt;</code></li>
-  <li>Link to a separate <code>.css</code> file in the <code>&lt;head&gt;</code></li>
+<li>Put the css inline in the html.</li>
+
+<li>Put the css in a <code>&lt;style&gt;..&lt;/style&gt;</code> section in the <code>&lt;head&gt;</code></li>
+
+<li>Link to a separate <code>.css</code> file in the <code>&lt;head&gt;</code></li>
 </ol>
 
 <p>The first way is sometimes useful, but defeats the point of using CSS to separate presentation and information. The second way is a bit better and is what we’ll do now - it’s nice to have everything in a single file when you’re just starting. The third way is the best. We’ll look at how to do this next time.</p>
 
-<h3 id="css-in-the-head">CSS in the <code>&lt;head&gt;</code></h3>
+<h3 id="css_in_the_">CSS in the <code>&lt;head&gt;</code></h3>
 
-<p>If you’re putting your CSS in the <code>&lt;head&gt;</code> of your html file (option 2) it should look something like this: </p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;title&gt;</span>Some title<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;style&gt;</span>
-    <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
-  <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span></code></pre></div>
-
+<p>If you’re putting your CSS in the <code>&lt;head&gt;</code> of your html file (option 2) it should look something like this:</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;head&gt;</span>
+  <span class='nt'>&lt;title&gt;</span>Some title<span class='nt'>&lt;/title&gt;</span>
+  <span class='nt'>&lt;style&gt;</span>
+    <span class='nt'>h1</span> <span class='p'>{</span> <span class='k'>color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span> <span class='p'>}</span>
+  <span class='nt'>&lt;/style&gt;</span>
+<span class='nt'>&lt;/head&gt;</span>
+</code></pre></div>
 <p>The bit inside the <code>&lt;style&gt;</code> tags is CSS. The <code>h1</code> bit specifies the tag that will be styled. The bit inside the <code>{ ... }</code> specifies the styles that will be applied. Here we change the colour of the <code>h1</code> text red.</p>
 
 <p>If you save the changes to the html file, then open (or refresh) the page in your browser you should see the changes. By opening the developer tools, and hovering over the <code>h1</code> you should be able to see your css rule at the side.</p>
 
-<h3 id="a-few-more-properties">A few more properties</h3>
+<h3 id="a_few_more_properties">A few more properties</h3>
 
 <p>In the example above we changed the color of the <code>h1</code> element. Here are a few examples of other simple properties you can try out while you’re getting the hang of css:</p>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">p</span> <span class="p">{</span> <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Arial&#39;</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">h2</span> <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">h3</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="o">:</span> <span class="m">2px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
+<div class='highlight'><pre><code class='css'><span class='nt'>p</span> <span class='p'>{</span> <span class='k'>font-family</span><span class='o'>:</span> <span class='s1'>&#39;Arial&#39;</span><span class='p'>;</span> <span class='p'>}</span>
+<span class='nt'>h2</span> <span class='p'>{</span> <span class='k'>font-size</span><span class='o'>:</span> <span class='m'>20px</span><span class='p'>;</span> <span class='p'>}</span>
+<span class='nt'>h3</span> <span class='p'>{</span>
+    <span class='k'>background-color</span><span class='o'>:</span> <span class='nb'>green</span><span class='p'>;</span>
+    <span class='k'>font-size</span><span class='o'>:</span> <span class='m'>2px</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
 <p>Note that you can specify multiple properties on one element. When you do this it’s nice to lay them out on multiple lines as done above.</p>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> </p>
-  <ol>
+<div class='exercise alert alert-info'><strong>Task:</strong> 
+<ol>
 <li>Open `exercise1.html` in Sublime Text and in Chrome.</li>
 <li>Add some css in the `head` to make the `h1` turn red.</li>
 <li>Continue with the exercise until `exercise1.html` looks like `exercise1_solution.png`.</li>
 </ol>
 </div>
-
 	</div>
 
 	
@@ -177,76 +172,70 @@ laptop!</p>
 	
 
 		<h2>Selectors and Attributes</h2>
-		<p>So far you have used html tags to specify CSS rules. For example,</p>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">h2</span> <span class="p">{</span> 
-  <span class="k">font-size</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">pink</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
+		
+<p>So far you have used html tags to specify CSS rules. For example,</p>
+<div class='highlight'><pre><code class='css'><span class='nt'>h2</span> <span class='p'>{</span> 
+  <span class='k'>font-size</span><span class='o'>:</span> <span class='m'>40px</span><span class='p'>;</span>
+  <span class='k'>color</span><span class='o'>:</span> <span class='nb'>pink</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
 <p>will turn all your <code>&lt;h2&gt;</code> massive and pink.</p>
 
 <p>It is often useful to be able to make CSS rules more specific, so you can apply different styles to different parts of the page. One common way to do this is to target specific html attributes - in particular <code>id</code> and <code>class</code>.</p>
 
-<h3 id="the-id-and-class-attributes">The <code>id</code> and <code>class</code> attributes</h3>
+<h3 id="the__and__attributes">The <code>id</code> and <code>class</code> attributes</h3>
 
 <p>HTML tags can have <em>attributes</em> which provide additional information about the element. You’ve aready seen some examples of this:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.facebook.com&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;cat_pic.png&quot;</span><span class="nt">&gt;</span></code></pre></div>
-
-<p>Both <code>href</code> and <code>src</code> are examples of html attributes. They are written in pairs with their values: <code>attribute="value"</code>.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;a</span> <span class='na'>href=</span><span class='s'>&quot;http://www.facebook.com&quot;</span><span class='nt'>&gt;</span>
+<span class='nt'>&lt;img</span> <span class='na'>src=</span><span class='s'>&quot;cat_pic.png&quot;</span><span class='nt'>&gt;</span>
+</code></pre></div>
+<p>Both <code>href</code> and <code>src</code> are examples of html attributes. They are written in pairs with their values: <code>attribute=&quot;value&quot;</code>.</p>
 
 <p>There are some attributes that can be added to any tag. Two examples of these are <code>id</code> and <code>class</code>:</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;h2</span> <span class='na'>id=</span><span class='s'>&quot;products_title&quot;</span><span class='nt'>&gt;</span>Our scrumptious puddings<span class='nt'>&lt;/h2&gt;</span>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">&quot;products_title&quot;</span><span class="nt">&gt;</span>Our scrumptious puddings<span class="nt">&lt;/h2&gt;</span>
-
-<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;products_list&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Black forrest gateau<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Rasberry lemon swirl cheesecake<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Sticky toffee pudding<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;product_item&quot;</span><span class="nt">&gt;</span>Death-by-chocolate cake<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/uk&gt;</span></code></pre></div>
-
+<span class='nt'>&lt;ul</span> <span class='na'>id=</span><span class='s'>&quot;products_list&quot;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;product_item&quot;</span><span class='nt'>&gt;</span>Black forrest gateau<span class='nt'>&lt;/li&gt;</span>
+  <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;product_item&quot;</span><span class='nt'>&gt;</span>Rasberry lemon swirl cheesecake<span class='nt'>&lt;/li&gt;</span>
+  <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;product_item&quot;</span><span class='nt'>&gt;</span>Sticky toffee pudding<span class='nt'>&lt;/li&gt;</span>
+  <span class='nt'>&lt;li</span> <span class='na'>class=</span><span class='s'>&quot;product_item&quot;</span><span class='nt'>&gt;</span>Death-by-chocolate cake<span class='nt'>&lt;/li&gt;</span>
+<span class='nt'>&lt;/uk&gt;</span>
+</code></pre></div>
 <p>Both <code>id</code> and <code>class</code> are used to add some information to the HTML tags. The key difference is that <code>id</code> should specify a <em>unique element on the page</em>, whereas multiple elements can share the same <code>class</code>.</p>
 
 <p>CSS lets you target the <code>id</code> and <code>class</code> attributes in special ways:</p>
+<div class='highlight'><pre><code class='css'><span class='c'>/* make the h2 with id=&quot;products_title&quot; purple */</span>
+<span class='nt'>h2</span><span class='nf'>#products_title</span> <span class='p'>{</span> <span class='k'>color</span><span class='o'>:</span> <span class='nb'>purple</span><span class='p'>;</span> <span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* make the h2 with id=&quot;products_title&quot; purple */</span>
-<span class="nt">h2</span><span class="nf">#products_title</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="c">/* remove the bullets from all li with class=&quot;product_item&quot; */</span>
-<span class="nt">li</span><span class="nc">.product_item</span> <span class="p">{</span> <span class="k">list-style-type</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
-
+<span class='c'>/* remove the bullets from all li with class=&quot;product_item&quot; */</span>
+<span class='nt'>li</span><span class='nc'>.product_item</span> <span class='p'>{</span> <span class='k'>list-style-type</span><span class='o'>:</span> <span class='k'>none</span><span class='p'>;</span> <span class='p'>}</span>
+</code></pre></div>
 <p>The <code>id</code> is targeted by adding <code>#id_value</code> to the tag and the <code>class</code> is targeted by adding <code>.class_value</code> to the tag.</p>
 
 <p>It is also possible to target any items with a given <code>class</code> or <code>id</code> by leaving out the HTML tag:</p>
+<div class='highlight'><pre><code class='css'><span class='c'>/* make any element with id=&quot;products_title&quot; purple */</span>
+<span class='nf'>#products_title</span> <span class='p'>{</span> <span class='k'>color</span><span class='o'>:</span> <span class='nb'>purple</span><span class='p'>;</span> <span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* make any element with id=&quot;products_title&quot; purple */</span>
-<span class="nf">#products_title</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="c">/* make any element with class=&quot;product_item blue&quot; */</span>
-<span class="nc">.product_item</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
-
-<h3 id="divs-and-spans">Divs and spans</h3>
+<span class='c'>/* make any element with class=&quot;product_item blue&quot; */</span>
+<span class='nc'>.product_item</span> <span class='p'>{</span> <span class='k'>color</span><span class='o'>:</span> <span class='nb'>blue</span><span class='p'>;</span> <span class='p'>}</span>
+</code></pre></div>
+<h3 id="divs_and_spans">Divs and spans</h3>
 
 <p>There are two important HTML tags, that we didn’t use last week: <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>. Both are really useful when it comes to using HTML attributes to target CSS classes.</p>
 
 <p><code>&lt;div&gt;</code> stands for <em>division</em> and is used to break the page up into different parts. It is a ‘block-level’ element, which means that it will start a new line before and after it.</p>
 
 <p><code>&lt;span&gt;</code> can be used to apply classes and ids to certain bits of text. It is an ‘inline’ element, which won’t start a new paragrah before or after.</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;div</span> <span class='na'>id=</span><span class='s'>&#39;info_section&#39;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;p&gt;</span>This is a paragraph in the info section. We can use a span to target <span class='nt'>&lt;span</span> <span class='na'>class=</span><span class='s'>&#39;important&#39;</span><span class='nt'>&gt;</span>certain bits of important text<span class='nt'>&lt;/span&gt;</span>.<span class='nt'>&lt;p&gt;</span>
+<span class='nt'>&lt;/div&gt;</span>
+</code></pre></div><div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>Open the file <code>html2/exercise2.html</code> in Sublime Text and Chrome.</li>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;info_section&#39;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;p&gt;</span>This is a paragraph in the info section. We can use a span to target <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&#39;important&#39;</span><span class="nt">&gt;</span>certain bits of important text<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. Open the file <code>html2/exercise2.html</code> in Sublime Text and Chrome.
-3. Continue until your page looks like <code>html2/exercise2_solution.png</code></p>
+<li>Continue until your page looks like <code>html2/exercise2_solution.png</code></li>
+</ol>
 </div>
-
-
 	</div>
 
 	
@@ -254,37 +243,36 @@ laptop!</p>
 	
 
 		<h2>External stylesheets</h2>
-		<p>So far you have written your CSS rules directly in the <code>head</code> section of your html page:</p>
+		
+<p>So far you have written your CSS rules directly in the <code>head</code> section of your html page:</p>
+<div class='highlight'><pre><code class='html'><span class='cp'>&lt;!DOCTYPE html&gt;</span>
+<span class='nt'>&lt;html&gt;</span>
+  <span class='nt'>&lt;head&gt;</span>
+  	<span class='nt'>&lt;title&gt;</span>My page<span class='nt'>&lt;/title&gt;</span>
+  	<span class='nt'>&lt;style </span><span class='na'>type=</span><span class='s'>&quot;text/css&quot;</span><span class='nt'>&gt;</span>
+  	  <span class='nt'>h1</span> <span class='p'>{</span> <span class='k'>color</span><span class='o'>:</span> <span class='nb'>red</span><span class='p'>;</span> <span class='p'>}</span>
+  	<span class='nt'>&lt;/style&gt;</span>
+  <span class='nt'>&lt;/head&gt;</span>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-  	<span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
-  	<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
-  	  <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
-  	<span class="nt">&lt;/style&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
+  <span class='c'>&lt;!-- body goes here --&gt;</span>
 
-  <span class="c">&lt;!-- body goes here --&gt;</span>
-
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
-
+<span class='nt'>&lt;/html&gt;</span>
+</code></pre></div>
 <p>We did this to make your first experiments with CSS quick an easy. In a live site it is considered bad practice to put your CSS inside the <code>head</code> section: Typically a site will have one set of styles that apply to all the pages. By separating these CSS rules into their own file you (a) reduce repetition in your code and (b) reduce the amount of information that has to be sent to the browser for each page - if the CSS file applies to the whole site, it only needs to be sent to the visitor once.</p>
 
 <p>To link to an external CSS file you can do the following:</p>
+<div class='highlight'><pre><code class='html'><span class='cp'>&lt;!DOCTYPE html&gt;</span>
+<span class='nt'>&lt;html&gt;</span>
+  <span class='nt'>&lt;head&gt;</span>
+  	<span class='nt'>&lt;title&gt;</span>My page<span class='nt'>&lt;/title&gt;</span>
+  	<span class='nt'>&lt;link</span> <span class='na'>rel=</span><span class='s'>&#39;stylesheet&#39;</span> <span class='na'>type=</span><span class='s'>&#39;text/css&#39;</span> <span class='na'>href=</span><span class='s'>&#39;path/to/my_css_file.css&#39;</span><span class='nt'>&gt;</span>
+  <span class='nt'>&lt;/head&gt;</span>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-  	<span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
-  	<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">type=</span><span class="s">&#39;text/css&#39;</span> <span class="na">href=</span><span class="s">&#39;path/to/my_css_file.css&#39;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
+  <span class='c'>&lt;!-- body goes here --&gt;</span>
 
-  <span class="c">&lt;!-- body goes here --&gt;</span>
-
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
-
-<h3 id="linking-to-other-files">Linking to other files</h3>
+<span class='nt'>&lt;/html&gt;</span>
+</code></pre></div>
+<h3 id="linking_to_other_files">Linking to other files</h3>
 
 <p>Linking to other files (stylesheets, javascript files, images) can be done in several ways, just like linking to another page. Say you have the following directory structure:</p>
 
@@ -298,60 +286,52 @@ laptop!</p>
 |
 ---- stylesheets
      |
-      ---- main.css
-</code></pre>
+      ---- main.css</code></pre>
 
 <p>and you’re going to deploy your site to “http://www.my_first_site.com”. Suppose you want to link to <code>main.css</code> from <code>index.html</code> and to <code>background.jpg</code> from <code>main.css</code>. There are three different styles of links you can use:</p>
 
-<h4 id="absolute-links">1. Absolute links</h4>
+<h4 id="1_absolute_links">1. Absolute links</h4>
 
 <p>Absolute external links include the complete url to the resource you’re linking to. <strong>Absolute links start with either http:// or https://</strong>.</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- in index.html --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.my_first_site.com/stylesheets/main.css&quot;</span><span class="nt">&gt;</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* in main.css */</span>
-<span class="nt">body</span> <span class="p">{</span>
-  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;http://www.my_first_site.com/images/background.jpg&quot;)</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
+<div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- in index.html --&gt;</span>
+<span class='nt'>&lt;link</span> <span class='na'>rel=</span><span class='s'>&quot;stylesheet&quot;</span> <span class='na'>type=</span><span class='s'>&quot;text/css&quot;</span> <span class='na'>href=</span><span class='s'>&quot;http://www.my_first_site.com/stylesheets/main.css&quot;</span><span class='nt'>&gt;</span>
+</code></pre></div><div class='highlight'><pre><code class='css'><span class='c'>/* in main.css */</span>
+<span class='nt'>body</span> <span class='p'>{</span>
+  <span class='k'>background-image</span><span class='o'>:</span> <span class='sx'>url(&quot;http://www.my_first_site.com/images/background.jpg&quot;)</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
 <p>Absolute external links can be used to link to resources held on different sites, but wouldn’t usually be used for links within your own site. They’re a bit fragile - if you change your domain name all the links will break. They also won’t work when you’re developing locally.</p>
 
-<h4 id="root-relative-links">2. Root-relative links</h4>
+<h4 id="2_rootrelative_links">2. Root-relative links</h4>
 
 <p>Root-relative links contain the path to the resource <em>relative to the site’s root</em>. The site’s root is (roughly) the folder that contains the site - in this case, <code>first_site</code>. <strong>Root-relative links begin with a <code>/</code></strong>:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- in index.html --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;/stylesheets/main.css&quot;</span><span class="nt">&gt;</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* in main.css */</span>
-<span class="nt">body</span> <span class="p">{</span>
-  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;/images/background.jpg&quot;)</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
+<div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- in index.html --&gt;</span>
+<span class='nt'>&lt;link</span> <span class='na'>rel=</span><span class='s'>&quot;stylesheet&quot;</span> <span class='na'>type=</span><span class='s'>&quot;text/css&quot;</span> <span class='na'>href=</span><span class='s'>&quot;/stylesheets/main.css&quot;</span><span class='nt'>&gt;</span>
+</code></pre></div><div class='highlight'><pre><code class='css'><span class='c'>/* in main.css */</span>
+<span class='nt'>body</span> <span class='p'>{</span>
+  <span class='k'>background-image</span><span class='o'>:</span> <span class='sx'>url(&quot;/images/background.jpg&quot;)</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
 <p>Root-relative links are a bit more flexible than absolute external links: e.g. if you change your domain name everything will still be fine. They’re sometimes useful for your own static sites, but probably won’t work when developing locally (because the root will be taken to be the root of your file system and not the folder containing the site!).</p>
 
-<h4 id="document-relative-links">3. Document-relative links</h4>
+<h4 id="3_documentrelative_links">3. Document-relative links</h4>
 
 <p>Document-relative links contain the path to the resource <em>relative to the file where the link is written</em>. <strong>Document-relative links don’t begin with <code>/</code></strong>:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- in index.html --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;stylesheets/main.css&quot;</span><span class="nt">&gt;</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* in main.css */</span>
-<span class="nt">body</span> <span class="p">{</span>
-  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&quot;../images/background.jpg&quot;)</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
+<div class='highlight'><pre><code class='html'><span class='c'>&lt;!-- in index.html --&gt;</span>
+<span class='nt'>&lt;link</span> <span class='na'>rel=</span><span class='s'>&quot;stylesheet&quot;</span> <span class='na'>type=</span><span class='s'>&quot;text/css&quot;</span> <span class='na'>href=</span><span class='s'>&quot;stylesheets/main.css&quot;</span><span class='nt'>&gt;</span>
+</code></pre></div><div class='highlight'><pre><code class='css'><span class='c'>/* in main.css */</span>
+<span class='nt'>body</span> <span class='p'>{</span>
+  <span class='k'>background-image</span><span class='o'>:</span> <span class='sx'>url(&quot;../images/background.jpg&quot;)</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
 <p>To link to the stylesheet from <code>index.html</code> we use <code>stylesheets/main.css</code> which says “look in the same folder I’m in (<code>first_site</code>) and find a folder called <code>styleheets</code> and a file in it called <code>main.css</code>”.</p>
 
-<p>To link to the image from the stylesheet is slightly more complicated: we use <code>../images/background.jpg</code>. This means “go to the folder above the one I’m in (I’m in <code>stylesheets</code>, so that’s <code>first_site</code>) and find a folder called <code>images</code> and a file in it called <code>background.jpg</code>”. </p>
-
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Important to know</h3>
+<p>To link to the image from the stylesheet is slightly more complicated: we use <code>../images/background.jpg</code>. This means “go to the folder above the one I’m in (I’m in <code>stylesheets</code>, so that’s <code>first_site</code>) and find a folder called <code>images</code> and a file in it called <code>background.jpg</code>”.</p>
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    <h3 class='panel-title'>Important to know</h3>
   </div>
-  <div class="panel-body">
+  <div class='panel-body'>
     In document-relative links (and in many other places e.g. command line navigation)
    <ul>
       <li><code>.</code> means in the folder <strong>that I'm in</strong></li>
@@ -359,20 +339,20 @@ laptop!</p>
     </ul> 
   </div>
 </div>
-
 <p>Relative links are the most flexible - they will work on your local file system. The only think you have to be careful about is moving your files into different folders, which can cause links to break.</p>
 
 <p><strong>You should be using relative local links in these exercises.</strong></p>
 
 <p>For a recap of all this, read <a href="https://www.inkling.com/read/dreamweaver-cs6-missing-manual-david-sawyer-mcfarland-1st/chapter-4/understanding-links">this article</a>.</p>
+<div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>Return to <code>exercise1.html</code> and separate the CSS out into a separate file (called <code>exercise1.css</code>).</li>
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. Return to <code>exercise1.html</code> and separate the CSS out into a separate file (called <code>exercise1.css</code>).
-2. Check that the CSS still shows up when you view the site in the browser.
-3. Make a change in <code>exercise1.css</code> and check that you can see that in the browser. (You might need to refresh the page a few times).</p>
+<li>Check that the CSS still shows up when you view the site in the browser.</li>
+
+<li>Make a change in <code>exercise1.css</code> and check that you can see that in the browser. (You might need to refresh the page a few times).</li>
+</ol>
 </div>
-
 	</div>
 
 	
@@ -380,33 +360,34 @@ laptop!</p>
 	
 
 		<h2>Pushing to GitHub</h2>
-		<p>Git is a version control system. It allows you to keep the entire history of your code, and makes it easy to share and collaborate with others.</p>
+		
+<p>Git is a version control system. It allows you to keep the entire history of your code, and makes it easy to share and collaborate with others.</p>
 
-<h3 id="using-git">Using git</h3>
+<h3 id="using_git">Using git</h3>
 
 <p>Using git is really easy:</p>
 
 <ol>
-  <li>Set up a folder to be a <em>git repo</em>. This tells git to track all changes in that folder.</li>
-  <li>After you’ve made some changes, save them into the repository.</li>
-  <li>Once you’ve saved the changes push them up to github.</li>
+<li>Set up a folder to be a <em>git repo</em>. This tells git to track all changes in that folder.</li>
+
+<li>After you’ve made some changes, save them into the repository.</li>
+
+<li>Once you’ve saved the changes push them up to github.</li>
 </ol>
 
 <p>The first point is important: <em>git works on a folder level</em>. It tracks all the changes you make to files within a given folder.</p>
 
-<h3 id="actually-using-git">Actually using git</h3>
+<h3 id="actually_using_git">Actually using git</h3>
 
 <p>Actually using git is a bit harder. It’s a very powerful tool and pretty complex to get started with. To make things simpler, we’re going to use a tool called <code>gitgit</code>.</p>
 
 <p>To install gitgit open the command line and type the following:</p>
 
-<pre><code>gem install gitgit
-</code></pre>
+<pre><code>gem install gitgit</code></pre>
 
 <p>To see if this worked, type</p>
 
-<pre><code>gitgit
-</code></pre>
+<pre><code>gitgit</code></pre>
 
 <p>You should see a list of gitgit commands something like this:</p>
 
@@ -417,45 +398,39 @@ Commands:
   gitgit lg              # Show your recent saves
   gitgit push            # Push your changes to github
   gitgit save            # Save you changes to the repo
-  gitgit status          # See what changes you've made since you last save
-</code></pre>
+  gitgit status          # See what changes you&#39;ve made since you last save</code></pre>
 
 <p>If it didn’t work, you might need to do</p>
 
-<pre><code>sudo gem install gitgit
-</code></pre>
+<pre><code>sudo gem install gitgit</code></pre>
 
 <p>and type your password.</p>
 
 <p>You also might need to do</p>
 
-<pre><code>rbenv rehash
-</code></pre>
+<pre><code>rbenv rehash</code></pre>
 
 <p>If in doubt contact a teaching assistant!</p>
 
-<h3 id="using-gitgit">Using gitgit</h3>
+<h3 id="using_gitgit">Using gitgit</h3>
 
 <p>To <strong>make a folder into a git repository</strong>:</p>
 
-<pre><code>gitgit init
-</code></pre>
+<pre><code>gitgit init</code></pre>
 
 <p>then follow the instructions. You’ll only need to do this once for each folder you want to make into a repository.</p>
 
 <p>After you’ve made some changes to your files and saved them, you can <strong>save them into your repo</strong> by typing:</p>
 
-<pre><code>gitgit save
-</code></pre>
+<pre><code>gitgit save</code></pre>
 
 <p>Finally, to push your code up to github you can do</p>
 
-<pre><code>gitgit push
-</code></pre>
+<pre><code>gitgit push</code></pre>
 
 <p>Before you do this, you will need to setup your repo with github.</p>
 
-<h3 id="setting-up-your-repo-with-github">Setting up your repo with github</h3>
+<h3 id="setting_up_your_repo_with_github">Setting up your repo with github</h3>
 
 <p>Go to github, login, and click “Create New Repo” in the top left hand corner.</p>
 
@@ -463,13 +438,11 @@ Commands:
 
 <p>Follow the instructions, calling it something like <code>first_site</code>. <strong>Do not</strong> click the box which says ‘Create a readme with this repository’. You’ll get to a page when it’ll describe how to get your code online. You want to follow the instructions for “Pushing an existing repository to github”.</p>
 
-<h3 id="pushing-your-code-to-github">Pushing your code to github</h3>
+<h3 id="pushing_your_code_to_github">Pushing your code to github</h3>
 
 <p>We will now set up your <code>first_site</code> folder to use git and push it up to github.</p>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> </p>
-  <ol>
+<div class='exercise alert alert-info'><strong>Task:</strong> 
+<ol>
 <li>Navigate to your first_site folder using cd and ls.</li>
 <li>Make it into a git repo: "gitgit init"</li>
 <li>Save all the work you've done so far: "gitgit save"</li>
@@ -479,7 +452,6 @@ Commands:
 <li>Go back to github and refresh the page. You should see your code.</li>
 </ol>
 </div>
-
 	</div>
 
 	
@@ -487,31 +459,27 @@ Commands:
 	
 
 		<h2>Homework</h2>
-		<h3 id="finishing-off">Finishing off</h3>
+		
+<h3 id="finishing_off">Finishing off</h3>
+<div class='exercise alert alert-info'><strong>Task:</strong> 
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-Finish off both CSS exercises from class. Check your solutions online:</p>
-  <ul>
+<p>Finish off both CSS exercises from class. Check your solutions online:</p>
+
+<ul>
 <li>Find the HTML2 repository on Code61's github page.</li>
 <li>In the `branch` dropdown (just above the list of files) select the `solution` branch.</li>
 <li>Click on the files below to see the solution</li>
 </ul>
 </div>
-
-<h3 id="more-htmlcss">More HTML/CSS</h3>
-
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> </p>
-  <ol>
+<h3 id="more_htmlcss">More HTML/CSS</h3>
+<div class='exercise alert alert-info'><strong>Task:</strong> 
+<ol>
 <li>Complete the whole of Project 3 on the [General Assembly Dash](https://dash.generalassemb.ly/projects) site.</li>
 <li>Make some changes to your `first_site` based on what you've learnt. Make sure you add them to git, push them to github and check you can see them online.</li>
 <li>(Optional) Do the projects from the [Codecademy Web Track](http://www.codecademy.com/tracks/web) Sections 7, 8 &amp; 9.</li>
 <li>(Optional) Read [this article](https://www.inkling.com/read/dreamweaver-cs6-missing-manual-david-sawyer-mcfarland-1st/chapter-4/understanding-links) about absolute vs. relative links.</li>
 </ol>
 </div>
-
-
 	</div>
 
 </div>

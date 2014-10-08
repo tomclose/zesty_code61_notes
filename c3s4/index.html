@@ -80,116 +80,123 @@
 	
 
 		<h2>Hashes</h2>
-		<p>A <code>Hash</code> is ruby’s basic <em>key-value store</em>: a place where you can store values, and look them up by a key. The <code>Hash</code> and the <code>Array</code> are ruby’s two common ways of storing a collection of objects. The key differences between ‘Hash’ and ‘Array’ are:</p>
+		
+<p>A <code>Hash</code> is ruby’s basic <em>key-value store</em>: a place where you can store values, and look them up by a key. The <code>Hash</code> and the <code>Array</code> are ruby’s two common ways of storing a collection of objects. The key differences between ‘Hash’ and ‘Array’ are:</p>
 
 <ul>
-  <li>In an <code>Array</code> objects are stored in order. You can think of an <code>Array</code> as a list.</li>
-  <li>In an <code>Array</code> we reference objects by a numerical index.</li>
-  <li>In a <code>Hash</code> there is no order on the objects. You can think of a <code>Hash</code> as a general collection.</li>
-  <li>In a <code>Hash</code> objects are referenced by a <code>key</code>. The key can be a number or a word (or several other things).</li>
+<li>In an <code>Array</code> objects are stored in order. You can think of an <code>Array</code> as a list.</li>
+
+<li>In an <code>Array</code> we reference objects by a numerical index.</li>
+
+<li>In a <code>Hash</code> there is no order on the objects. You can think of a <code>Hash</code> as a general collection.</li>
+
+<li>In a <code>Hash</code> objects are referenced by a <code>key</code>. The key can be a number or a word (or several other things).</li>
 </ul>
 
 <p>Here is an example of a simple hash:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>character</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;name&#39;</span><span class='o'>=&gt;</span><span class='s1'>&#39;Bart&#39;</span><span class='p'>,</span> <span class='s1'>&#39;surname&#39;</span><span class='o'>=&gt;</span><span class='s1'>&#39;Simpson&#39;</span><span class='p'>,</span> <span class='s1'>&#39;age&#39;</span><span class='o'>=&gt;</span> <span class='mi'>10</span><span class='p'>,</span> <span class='s1'>&#39;catchphrase&#39;</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;Eat my shorts&#39;</span><span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">character</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;Bart&#39;</span><span class="p">,</span> <span class="s1">&#39;surname&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;Simpson&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;catchphrase&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Eat my shorts&#39;</span><span class="p">}</span>
-
-<span class="n">character</span><span class="o">[</span><span class="s1">&#39;name&#39;</span><span class="o">]</span> <span class="c1">#=&gt; &#39;Bart&#39;</span>
-<span class="n">character</span><span class="o">[</span><span class="s1">&#39;catchphrase&#39;</span><span class="o">]</span> <span class="c1">#=&gt; &#39;Eat my shorts&#39;</span></code></pre></div>
-
+<span class='n'>character</span><span class='o'>[</span><span class='s1'>&#39;name&#39;</span><span class='o'>]</span> <span class='c1'>#=&gt; &#39;Bart&#39;</span>
+<span class='n'>character</span><span class='o'>[</span><span class='s1'>&#39;catchphrase&#39;</span><span class='o'>]</span> <span class='c1'>#=&gt; &#39;Eat my shorts&#39;</span>
+</code></pre></div>
 <p>In particular:</p>
 
 <ul>
-  <li>You write a <code>Hash</code> using the curly brackets <code>{ }</code>.</li>
-  <li>Each element of the hash has a key e.g. <code>'name'</code> and a value e.g. <code>'Bart'</code>.</li>
-  <li>When you write the hash you put the keys and values using the <code>=&gt;</code> symbol: <code>key =&gt; value</code>.</li>
-  <li>To pull values out of a hash you put the key inside <code>[ ]</code>. </li>
+<li>You write a <code>Hash</code> using the curly brackets <code>{ }</code>.</li>
+
+<li>Each element of the hash has a key e.g. <code>&#39;name&#39;</code> and a value e.g. <code>&#39;Bart&#39;</code>.</li>
+
+<li>When you write the hash you put the keys and values using the <code>=&gt;</code> symbol: <code>key =&gt; value</code>.</li>
+
+<li>To pull values out of a hash you put the key inside <code>[ ]</code>.</li>
 </ul>
+<div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>With your partner work through the expressions below. See if you can guess what each expression will do, then test by pasting into irb.</li>
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. With your partner work through the expressions below. See if you can guess what each expression will do, then test by pasting into irb.
-2. If you finish early, have a look at the ‘Arrays and back’ extension tab.</p>
+<li>If you finish early, have a look at the &#39;Arrays and back&#39; extension tab.</li>
+</ol>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;one&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;two&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;three&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>3</span><span class='p'>}</span>
 
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">}</span>
+<span class='c1'># Accessing elements</span>
+<span class='c1'># ------------------</span>
 
-<span class="c1"># Accessing elements</span>
-<span class="c1"># ------------------</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;one&#39;</span><span class='o'>]</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;two&#39;</span><span class='o'>]</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;four&#39;</span><span class='o'>]</span>
 
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="o">]</span>
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;two&#39;</span><span class="o">]</span>
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;four&#39;</span><span class="o">]</span>
+<span class='c1'># Setting elements</span>
+<span class='c1'># ----------------</span>
 
-<span class="c1"># Setting elements</span>
-<span class="c1"># ----------------</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;five&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='mi'>5</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;one&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='mi'>1</span><span class='o'>.</span><span class='mi'>0</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>delete</span><span class='p'>(</span><span class='s1'>&#39;one&#39;</span><span class='p'>)</span>  <span class='c1'># What does this return? Does it change the hash?</span>
 
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;five&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">h</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>  <span class="c1"># What does this return? Does it change the hash?</span>
+<span class='c1'># Some methods</span>
+<span class='c1'># ------------</span>
 
-<span class="c1"># Some methods</span>
-<span class="c1"># ------------</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>length</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>empty?</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>keys</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>values</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>has_key?</span><span class='p'>(</span><span class='s1'>&#39;one&#39;</span><span class='p'>)</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>has_value?</span><span class='p'>(</span><span class='mi'>7</span><span class='p'>)</span>
 
-<span class="n">h</span><span class="o">.</span><span class="n">length</span>
-<span class="n">h</span><span class="o">.</span><span class="n">empty?</span>
-<span class="n">h</span><span class="o">.</span><span class="n">keys</span>
-<span class="n">h</span><span class="o">.</span><span class="n">values</span>
-<span class="n">h</span><span class="o">.</span><span class="n">has_key?</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
-<span class="n">h</span><span class="o">.</span><span class="n">has_value?</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class='c1'># Iterating</span>
+<span class='c1'># ---------</span>
 
-<span class="c1"># Iterating</span>
-<span class="c1"># ---------</span>
-
-<span class="n">h</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span>
-
-
-<span class="c1"># Combining</span>
-<span class="c1"># ---------</span>
-
-<span class="n">h1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">}</span>
-<span class="n">h2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">=&gt;</span><span class="mi">4</span><span class="p">}</span>
-
-<span class="n">h1</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
-<span class="n">h1</span>    <span class="c1"># what has this done to h1?</span>
-<span class="n">h1</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
-<span class="n">h1</span>    <span class="c1"># what is h1 now?</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>key</span><span class='p'>,</span> <span class='n'>value</span><span class='o'>|</span>
+  <span class='nb'>puts</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>key</span><span class='si'>}</span><span class='s2'>: </span><span class='si'>#{</span><span class='n'>value</span><span class='si'>}</span><span class='s2'>&quot;</span>
+<span class='k'>end</span>
 
 
-<span class="c1"># Using a hash for counting (extension)</span>
-<span class="c1"># -------------------------</span>
+<span class='c1'># Combining</span>
+<span class='c1'># ---------</span>
 
-<span class="c1"># start with an empty hash</span>
-<span class="n">h</span> <span class="o">=</span> <span class="p">{}</span>
+<span class='n'>h1</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;a&#39;</span><span class='o'>=&gt;</span><span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='o'>=&gt;</span><span class='mi'>2</span><span class='p'>}</span>
+<span class='n'>h2</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;b&#39;</span><span class='o'>=&gt;</span><span class='mi'>3</span><span class='p'>,</span> <span class='s1'>&#39;c&#39;</span><span class='o'>=&gt;</span><span class='mi'>4</span><span class='p'>}</span>
 
-<span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">letter</span><span class="o">|</span>
-    <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">has_key?</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-        <span class="c1"># if the letter is already in the hash, increase</span>
-        <span class="c1"># its count by 1</span>
-        <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">else</span> <span class="c1"># letter isn&#39;t in the hash</span>
-        <span class="c1"># so put it in and set the count to 1</span>
-        <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">end</span>
-<span class="k">end</span>
+<span class='n'>h1</span><span class='o'>.</span><span class='n'>merge</span><span class='p'>(</span><span class='n'>h2</span><span class='p'>)</span>
+<span class='n'>h1</span>    <span class='c1'># what has this done to h1?</span>
+<span class='n'>h1</span><span class='o'>.</span><span class='n'>merge!</span><span class='p'>(</span><span class='n'>h2</span><span class='p'>)</span>
+<span class='n'>h1</span>    <span class='c1'># what is h1 now?</span>
 
-<span class="n">h</span>   <span class="c1"># what is h now?</span>
 
-<span class="c1"># A slicker way to count (extension)</span>
-<span class="c1"># ----------------------------------</span>
+<span class='c1'># Using a hash for counting (extension)</span>
+<span class='c1'># -------------------------</span>
 
-<span class="c1"># A slightly slicker way of doing this is</span>
-<span class="c1"># using a hash with a default value:</span>
+<span class='c1'># start with an empty hash</span>
+<span class='n'>h</span> <span class='o'>=</span> <span class='p'>{}</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 0 is the default value that is </span>
-                <span class="c1"># returned when the key is missing</span>
+<span class='o'>[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='o'>].</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>letter</span><span class='o'>|</span>
+    <span class='k'>if</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>has_key?</span><span class='p'>(</span><span class='n'>letter</span><span class='p'>)</span>
+        <span class='c1'># if the letter is already in the hash, increase</span>
+        <span class='c1'># its count by 1</span>
+        <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>+=</span> <span class='mi'>1</span>
+    <span class='k'>else</span> <span class='c1'># letter isn&#39;t in the hash</span>
+        <span class='c1'># so put it in and set the count to 1</span>
+        <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>=</span> <span class='mi'>1</span>
+    <span class='k'>end</span>
+<span class='k'>end</span>
 
-<span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">letter</span><span class="o">|</span>
-    <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="k">end</span></code></pre></div>
+<span class='n'>h</span>   <span class='c1'># what is h now?</span>
+
+<span class='c1'># A slicker way to count (extension)</span>
+<span class='c1'># ----------------------------------</span>
+
+<span class='c1'># A slightly slicker way of doing this is</span>
+<span class='c1'># using a hash with a default value:</span>
+
+<span class='n'>h</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='mi'>0</span><span class='p'>)</span> <span class='c1'># 0 is the default value that is </span>
+                <span class='c1'># returned when the key is missing</span>
+
+<span class='o'>[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='o'>].</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>letter</span><span class='o'>|</span>
+    <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>+=</span> <span class='mi'>1</span>
+<span class='k'>end</span>
+</code></pre></div>
+
 
 </div>
-
 	</div>
 
 	
@@ -197,25 +204,28 @@
 	
 
 		<h2>Exercise summary</h2>
-		<p>In the last exercise you will have learnt a number of things about hashes. Here is a summary of the important points:</p>
+		
+<p>In the last exercise you will have learnt a number of things about hashes. Here is a summary of the important points:</p>
 
-<h3 id="accessing-and-setting-elements">Accessing and setting elements</h3>
+<h3 id="accessing_and_setting_elements">Accessing and setting elements</h3>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;one&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;two&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;three&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>3</span><span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">}</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;one&#39;</span><span class='o'>]</span> <span class='c1'>#=&gt; 1</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;four&#39;</span><span class='o'>]</span> <span class='c1'>#=&gt; nil</span>
 
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="o">]</span> <span class="c1">#=&gt; 1</span>
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;four&#39;</span><span class="o">]</span> <span class="c1">#=&gt; nil</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;five&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='mi'>5</span>
+<span class='n'>h</span><span class='o'>[</span><span class='s1'>&#39;one&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='mi'>1</span><span class='o'>.</span><span class='mi'>0</span>
 
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;five&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">h</span><span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
-
-<span class="n">h</span> <span class="c1">#=&gt; {&#39;one&#39; =&gt; 1.0, &#39;two&#39; =&gt; 2, &#39;three&#39; =&gt; 3, &#39;five&#39; =&gt; 5}</span></code></pre></div>
-
+<span class='n'>h</span> <span class='c1'>#=&gt; {&#39;one&#39; =&gt; 1.0, &#39;two&#39; =&gt; 2, &#39;three&#39; =&gt; 3, &#39;five&#39; =&gt; 5}</span>
+</code></pre></div>
 <ul>
-  <li>You access an element via its key: <code>h['one']</code></li>
-  <li>If the key isn’t in the hash this will give <code>nil</code></li>
-  <li>You add new elements by setting their key</li>
-  <li>If the key already exists its value will be updated</li>
+<li>You access an element via its key: <code>h[&#39;one&#39;]</code></li>
+
+<li>If the key isn’t in the hash this will give <code>nil</code></li>
+
+<li>You add new elements by setting their key</li>
+
+<li>If the key already exists its value will be updated</li>
 </ul>
 
 <h3 id="methods">Methods</h3>
@@ -223,77 +233,75 @@
 <p>Hashes have a number of methods, which behave as you would expect e.g.</p>
 
 <ul>
-  <li><code>length</code></li>
-  <li><code>empty?</code></li>
-  <li><code>keys</code>, <code>values</code></li>
-  <li><code>has_key?</code>, <code>has_value?</code></li>
+<li><code>length</code></li>
+
+<li><code>empty?</code></li>
+
+<li><code>keys</code>, <code>values</code></li>
+
+<li><code>has_key?</code>, <code>has_value?</code></li>
 </ul>
 
 <h3 id="iterating">Iterating</h3>
 
 <p>Just like an <code>Array</code>, you can iterate over a <code>Hash</code> using the <code>each</code> method. Unlike array iteration, in hash iteration the block accepts two parameters: the key and the value:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;one&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;two&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;three&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>3</span><span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">}</span>
-
-<span class="n">h</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-	<span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2"> = </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="k">end</span></code></pre></div>
-
-<h3 id="combining-hashes">Combining hashes</h3>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>key</span><span class='p'>,</span> <span class='n'>value</span><span class='o'>|</span>
+	<span class='nb'>puts</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>key</span><span class='si'>}</span><span class='s2'> = </span><span class='si'>#{</span><span class='n'>value</span><span class='si'>}</span><span class='s2'>&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<h3 id="combining_hashes">Combining hashes</h3>
 
 <p>Combining hashes is done by using the <code>merge</code> method. The values from the second hash are added to the first, replacing them if they already exist. You will often see this used in rails for specifying default options to a function:</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># note how the first version of b gets overwritten</span>
+<span class='p'>{</span><span class='s1'>&#39;a&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='p'>}</span><span class='o'>.</span><span class='n'>merge</span><span class='p'>({</span><span class='s1'>&#39;b&#39;</span><span class='o'>=&gt;</span><span class='mi'>3</span><span class='p'>,</span> <span class='s1'>&#39;c&#39;</span><span class='o'>=&gt;</span><span class='mi'>4</span><span class='p'>})</span> <span class='c1'>#=&gt; {&#39;a&#39;=&gt;1, &#39;b&#39;=&gt;3, &#39;c&#39;=&gt;4}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># note how the first version of b gets overwritten</span>
-<span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">}</span><span class="o">.</span><span class="n">merge</span><span class="p">({</span><span class="s1">&#39;b&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">=&gt;</span><span class="mi">4</span><span class="p">})</span> <span class="c1">#=&gt; {&#39;a&#39;=&gt;1, &#39;b&#39;=&gt;3, &#39;c&#39;=&gt;4}</span>
+<span class='c1'># real life example</span>
+<span class='k'>def</span> <span class='nf'>print_names</span><span class='p'>(</span><span class='n'>opts</span><span class='p'>)</span>
+	<span class='n'>default_opts</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;fancy_format&#39;</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span> <span class='s1'>&#39;max_length&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>20</span><span class='p'>}</span>
 
-<span class="c1"># real life example</span>
-<span class="k">def</span> <span class="nf">print_names</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span>
-	<span class="n">default_opts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fancy_format&#39;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="s1">&#39;max_length&#39;</span> <span class="o">=&gt;</span> <span class="mi">20</span><span class="p">}</span>
+	<span class='c1'># replace the defaults with options supplied</span>
+	<span class='n'>my_opts</span> <span class='o'>=</span> <span class='n'>default_opts</span><span class='o'>.</span><span class='n'>merge</span><span class='p'>(</span><span class='n'>opts</span><span class='p'>)</span> 
 
-	<span class="c1"># replace the defaults with options supplied</span>
-	<span class="n">my_opts</span> <span class="o">=</span> <span class="n">default_opts</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span> 
+	<span class='k'>if</span> <span class='n'>my_opts</span><span class='o'>[</span><span class='s1'>&#39;fancy_format&#39;</span><span class='o'>]</span>
+		<span class='c1'># ....</span>
+	<span class='k'>end</span>
 
-	<span class="k">if</span> <span class="n">my_opts</span><span class="o">[</span><span class="s1">&#39;fancy_format&#39;</span><span class="o">]</span>
-		<span class="c1"># ....</span>
-	<span class="k">end</span>
-
-	<span class="c1">#...</span>
-<span class="k">end</span></code></pre></div>
-
+	<span class='c1'>#...</span>
+<span class='k'>end</span>
+</code></pre></div>
 <p>The options example above is a common use of a hash in real life code.</p>
 
-<h3 id="using-a-hash-for-counting">Using a hash for counting</h3>
+<h3 id="using_a_hash_for_counting">Using a hash for counting</h3>
 
 <p>One special use of a hash is for counting things. The following code is an example of how to do this.</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{}</span>
+<span class='o'>[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='o'>].</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>letter</span><span class='o'>|</span>
+    <span class='k'>if</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>has_key?</span><span class='p'>(</span><span class='n'>letter</span><span class='p'>)</span>
+        <span class='c1'># if the letter is already in the hash, increase</span>
+        <span class='c1'># its count by 1</span>
+        <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>+=</span> <span class='mi'>1</span>
+    <span class='k'>else</span> <span class='c1'># letter isn&#39;t in the hash</span>
+        <span class='c1'># so put it in and set the count to 1</span>
+        <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>=</span> <span class='mi'>1</span>
+    <span class='k'>end</span>
+<span class='k'>end</span>
 
-<span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">letter</span><span class="o">|</span>
-    <span class="k">if</span> <span class="n">h</span><span class="o">.</span><span class="n">has_key?</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-        <span class="c1"># if the letter is already in the hash, increase</span>
-        <span class="c1"># its count by 1</span>
-        <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">else</span> <span class="c1"># letter isn&#39;t in the hash</span>
-        <span class="c1"># so put it in and set the count to 1</span>
-        <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">h</span> <span class="c1">#=&gt; {&#39;a&#39; =&gt; 3, &#39;b&#39; =&gt; 1}</span></code></pre></div>
-
+<span class='n'>h</span> <span class='c1'>#=&gt; {&#39;a&#39; =&gt; 3, &#39;b&#39; =&gt; 1}</span>
+</code></pre></div>
 <p>You can make this example a bit shorter by using a hash with a <strong>default value</strong>: normally a hash will return <code>nil</code> if the key isn’t there, but we can set it up to return something else. In particular we’ll set it up to return 0:</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># set up a hash with default value 0</span>
+<span class='n'>h</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='mi'>0</span><span class='p'>)</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># set up a hash with default value 0</span>
-<span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class='o'>[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='o'>].</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>letter</span><span class='o'>|</span>
+    <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>[</span><span class='n'>letter</span><span class='o'>]</span> <span class='o'>+</span> <span class='mi'>1</span>
+<span class='k'>end</span>
 
-<span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">letter</span><span class="o">|</span>
-    <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">=</span> <span class="n">h</span><span class="o">[</span><span class="n">letter</span><span class="o">]</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="k">end</span>
-
-<span class="n">h</span> <span class="c1">#=&gt; {&#39;a&#39; =&gt; 3, &#39;b&#39; =&gt; 1}</span></code></pre></div>
-
+<span class='n'>h</span> <span class='c1'>#=&gt; {&#39;a&#39; =&gt; 3, &#39;b&#39; =&gt; 1}</span>
+</code></pre></div>
 <p>If the letter isn’t in the hash yet, the default value of 0 will be returned. Otherwise the current count will be returned. Either way, we just need to increase the value by 1.</p>
-
 
 	</div>
 
@@ -302,31 +310,33 @@
 	
 
 		<h2>Symbols</h2>
-		<p>Symbols are a bit like strings that can’t be changed. They’re primarily used to save space and time:</p>
+		
+<p>Symbols are a bit like strings that can’t be changed. They’re primarily used to save space and time:</p>
 
 <ul>
-  <li>Every time you write a string in ruby it has to store a new copy of it in case it is changed.</li>
-  <li>Every time you compare two strings it has to check every letter to see if they’re the same.</li>
-  <li>As symbols can’t be changed, it allows ruby to only store them once.</li>
-  <li>This makes it quick to compare, as you can just check to see if it’s in the same storage location.</li>
+<li>Every time you write a string in ruby it has to store a new copy of it in case it is changed.</li>
+
+<li>Every time you compare two strings it has to check every letter to see if they’re the same.</li>
+
+<li>As symbols can’t be changed, it allows ruby to only store them once.</li>
+
+<li>This makes it quick to compare, as you can just check to see if it’s in the same storage location.</li>
 </ul>
 
 <p>So far we’ve used strings for our hash keys. As we write and compare hash keys a lot, it makes sense to use symbols instead.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s2">&quot;hello&quot;</span>
-<span class="ss">:hello</span></code></pre></div>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">:hello</span><span class="o">.</span><span class="n">to_s</span>
-<span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">to_sym</span>
+<div class='highlight'><pre><code class='ruby'><span class='s2'>&quot;hello&quot;</span>
+<span class='ss'>:hello</span>
+</code></pre></div><div class='highlight'><pre><code class='ruby'><span class='ss'>:hello</span><span class='o'>.</span><span class='n'>to_s</span>
+<span class='s2'>&quot;hello&quot;</span><span class='o'>.</span><span class='n'>to_sym</span>
 
 
-<span class="s2">&quot;hello&quot;</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; world&quot;</span>
-<span class="ss">:hello</span> <span class="o">&lt;&lt;</span> <span class="ss">:&quot; world&quot;</span>
+<span class='s2'>&quot;hello&quot;</span> <span class='o'>&lt;&lt;</span> <span class='s2'>&quot; world&quot;</span>
+<span class='ss'>:hello</span> <span class='o'>&lt;&lt;</span> <span class='ss'>:&quot; world&quot;</span>
 
-<span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">object_id</span>
+<span class='s2'>&quot;hello&quot;</span><span class='o'>.</span><span class='n'>object_id</span>
 
-<span class="ss">:hello</span><span class="o">.</span><span class="n">object_id</span></code></pre></div>
-
+<span class='ss'>:hello</span><span class='o'>.</span><span class='n'>object_id</span>
+</code></pre></div>
 	</div>
 
 	
@@ -334,54 +344,61 @@
 	
 
 		<h2>Sending email</h2>
-		<p>Today we’ll be looking at sending email from a ruby program. To do this we’ll be using a library called <a href="https://github.com/benprew/pony">Pony</a>. Pony is a light-weight, simple library (in comparison more fully fledged options like <a href="http://guides.rubyonrails.org/action_mailer_basics.html">ActionMailer</a>). After a small amount of configuration, it allows you to send emails with a single command.</p>
+		
+<p>Today we’ll be looking at sending email from a ruby program. To do this we’ll be using a library called <a href="https://github.com/benprew/pony">Pony</a>. Pony is a light-weight, simple library (in comparison more fully fledged options like <a href="http://guides.rubyonrails.org/action_mailer_basics.html">ActionMailer</a>). After a small amount of configuration, it allows you to send emails with a single command.</p>
 
 <p>We’ll be using a google account to send the email - you will need to input your username and password, and it will look like the email came from your gmail account. Using gmail is a good solution for a small test app like this. When you get bigger you will start hitting gmails sending limits, and you will want to investigate other solutions e.g. <a href="http://sendgrid.com/">sendgrid</a> or <a href="http://mandrill.com/">mandrill</a>. For further options see the <a href="https://addons.heroku.com/">heroku addons page</a>.</p>
 
 <p>Before sending an email we need to set up some configuration. We do this by setting the <code>Pony.options</code> hash:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Pony</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:via</span> <span class="o">=&gt;</span> <span class="s1">&#39;smtp&#39;</span><span class="p">,</span>
-  <span class="ss">:via_options</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="ss">:address</span>              <span class="o">=&gt;</span> <span class="s1">&#39;smtp.gmail.com&#39;</span><span class="p">,</span>
-    <span class="ss">:port</span>                 <span class="o">=&gt;</span> <span class="s1">&#39;587&#39;</span><span class="p">,</span>
-    <span class="ss">:enable_starttls_auto</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
-    <span class="ss">:user_name</span>            <span class="o">=&gt;</span> <span class="s1">&#39;yourusername&#39;</span><span class="p">,</span>
-    <span class="ss">:password</span>             <span class="o">=&gt;</span> <span class="s1">&#39;yourpassword&#39;</span><span class="p">,</span>
-    <span class="ss">:authentication</span>       <span class="o">=&gt;</span> <span class="ss">:plain</span><span class="p">,</span> <span class="c1"># :plain, :login, :cram_md5, no auth by default</span>
-    <span class="ss">:domain</span>               <span class="o">=&gt;</span> <span class="s2">&quot;localhost.localdomain&quot;</span> <span class="c1"># the HELO domain provided by the client to the server</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
+<div class='highlight'><pre><code class='ruby'><span class='no'>Pony</span><span class='o'>.</span><span class='n'>options</span> <span class='o'>=</span> <span class='p'>{</span>
+  <span class='ss'>:via</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;smtp&#39;</span><span class='p'>,</span>
+  <span class='ss'>:via_options</span> <span class='o'>=&gt;</span> <span class='p'>{</span>
+    <span class='ss'>:address</span>              <span class='o'>=&gt;</span> <span class='s1'>&#39;smtp.gmail.com&#39;</span><span class='p'>,</span>
+    <span class='ss'>:port</span>                 <span class='o'>=&gt;</span> <span class='s1'>&#39;587&#39;</span><span class='p'>,</span>
+    <span class='ss'>:enable_starttls_auto</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span>
+    <span class='ss'>:user_name</span>            <span class='o'>=&gt;</span> <span class='s1'>&#39;yourusername&#39;</span><span class='p'>,</span>
+    <span class='ss'>:password</span>             <span class='o'>=&gt;</span> <span class='s1'>&#39;yourpassword&#39;</span><span class='p'>,</span>
+    <span class='ss'>:authentication</span>       <span class='o'>=&gt;</span> <span class='ss'>:plain</span><span class='p'>,</span> <span class='c1'># :plain, :login, :cram_md5, no auth by default</span>
+    <span class='ss'>:domain</span>               <span class='o'>=&gt;</span> <span class='s2'>&quot;localhost.localdomain&quot;</span> <span class='c1'># the HELO domain provided by the client to the server</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
 <p>To send the email is then very simple:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Pony</span><span class="o">.</span><span class="n">mail</span><span class="p">(</span><span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s1">&#39;example@example.com&#39;</span><span class="p">,</span> <span class="ss">:subject</span> <span class="o">=&gt;</span> <span class="s2">&quot;Wow - an email&quot;</span><span class="p">,</span> <span class="ss">:body</span><span class="o">=&gt;</span><span class="s2">&quot;Hi. This is your program speaking. Bye.&quot;</span><span class="p">)</span></code></pre></div>
-
+<div class='highlight'><pre><code class='ruby'><span class='no'>Pony</span><span class='o'>.</span><span class='n'>mail</span><span class='p'>(</span><span class='ss'>:to</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;example@example.com&#39;</span><span class='p'>,</span> <span class='ss'>:subject</span> <span class='o'>=&gt;</span> <span class='s2'>&quot;Wow - an email&quot;</span><span class='p'>,</span> <span class='ss'>:body</span><span class='o'>=&gt;</span><span class='s2'>&quot;Hi. This is your program speaking. Bye.&quot;</span><span class='p'>)</span>
+</code></pre></div>
 <p>You can find out more about the different options you can use on the <a href="https://github.com/benprew/pony">pony github page</a>.</p>
+<div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>
+<p><strong>Fork</strong> and clone the code for this session: <a href='https://github.com/code61/sinatra_c3s4'>https://github.com/code61/sinatra_c3s4</a></p>
+</li>
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. <strong>Fork</strong> and clone the code for this session: <a href="https://github.com/code61/sinatra_c3s4">https://github.com/code61/sinatra_c3s4</a>
-2. Install the gems (including <code>pony</code>):</p>
+<li>
+<p>Install the gems (including <code>pony</code>):</p>
 
-  <pre><code>    bundle install
-</code></pre>
+<pre><code> bundle install</code></pre>
+</li>
 
-  <ol>
-    <li>Copy and paste the contents of <code>development_pony_options.rb.sample</code> into a new file. Save this file as <code>development_pony_options.rb</code>. Fill in your gmail (or university) account details.</li>
-    <li>In irb type <code>require 'pony'</code>, then copy and paste in your updated options.</li>
-    <li>Send an email to yourself e.g.:</li>
-  </ol>
+<li>
+<p>Copy and paste the contents of <code>development_pony_options.rb.sample</code> into a new file. Save this file as <code>development_pony_options.rb</code>. Fill in your gmail (or university) account details.</p>
+</li>
 
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Pony</span><span class="o">.</span><span class="n">mail</span><span class="p">(</span><span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s1">&#39;example@example.com&#39;</span><span class="p">,</span> <span class="ss">:subject</span> <span class="o">=&gt;</span> <span class="s2">&quot;Wow - an email&quot;</span><span class="p">,</span> <span class="ss">:body</span><span class="o">=&gt;</span><span class="s2">&quot;Hi. This is your program speaking. Bye.&quot;</span><span class="p">)</span></code></pre></div>
+<li>
+<p>In irb type <code>require &amp;#39;pony&amp;#39;</code>, then copy and paste in your updated options.</p>
+</li>
 
-  <ol>
-    <li>Try running the sinatra app: <code>ruby app.rb</code>.</li>
-    <li>The form submission doesn’t do anything at the moment. Can you work out what’s wrong, and fix it?</li>
-  </ol>
+<li>
+<p>Send an email to yourself e.g.:</p>
+</li>
+</ol>
+<div class='highlight'><pre><code class='ruby'><span class='no'>Pony</span><span class='o'>.</span><span class='n'>mail</span><span class='p'>(</span><span class='ss'>:to</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;example@example.com&#39;</span><span class='p'>,</span> <span class='ss'>:subject</span> <span class='o'>=&gt;</span> <span class='s2'>&quot;Wow - an email&quot;</span><span class='p'>,</span> <span class='ss'>:body</span><span class='o'>=&gt;</span><span class='s2'>&quot;Hi. This is your program speaking. Bye.&quot;</span><span class='p'>)</span>
+</code></pre></div>
+<ol>
+<li>Try running the sinatra app: <code>ruby app.rb</code>.</li>
 
+<li>The form submission doesn&#39;t do anything at the moment. Can you work out what&#39;s wrong, and fix it?</li>
+</ol>
 </div>
-
 	</div>
 
 	
@@ -389,12 +406,12 @@
 	
 
 		<h2>Email templates</h2>
-		<p>So far the body of our email has only been a single line. What if we want a proper multi-line email? You can use <code>erb</code> templates for this!</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Pony</span><span class="o">.</span><span class="n">mail</span><span class="p">(</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="vi">@email</span><span class="p">,</span>
-             <span class="ss">:subject</span> <span class="o">=&gt;</span> <span class="s2">&quot;Congratulations, you added a fruit!&quot;</span><span class="p">,</span>
-             <span class="ss">:body</span> <span class="o">=&gt;</span> <span class="n">erb</span><span class="p">(</span><span class="ss">:email</span><span class="p">,</span> <span class="ss">:layout</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">)</span>   <span class="p">)</span></code></pre></div>
-
+		
+<p>So far the body of our email has only been a single line. What if we want a proper multi-line email? You can use <code>erb</code> templates for this!</p>
+<div class='highlight'><pre><code class='ruby'>  <span class='no'>Pony</span><span class='o'>.</span><span class='n'>mail</span><span class='p'>(</span> <span class='ss'>:to</span> <span class='o'>=&gt;</span> <span class='vi'>@email</span><span class='p'>,</span>
+             <span class='ss'>:subject</span> <span class='o'>=&gt;</span> <span class='s2'>&quot;Congratulations, you added a fruit!&quot;</span><span class='p'>,</span>
+             <span class='ss'>:body</span> <span class='o'>=&gt;</span> <span class='n'>erb</span><span class='p'>(</span><span class='ss'>:email</span><span class='p'>,</span> <span class='ss'>:layout</span> <span class='o'>=&gt;</span> <span class='kp'>false</span><span class='p'>)</span>   <span class='p'>)</span>
+</code></pre></div>
 <p>The important bit is <code>erb(:email, :layout =&gt; false)</code>, which tells sinatra to find <code>views/email.erb</code> and run it through erb (to replace any <code>&lt;%= %&gt;</code> tags). The <code>:layout =&gt; false</code> tells sintra to skip the normal layout file: we want to send the user the raw text, not an html page! The result is then used as the email’s body.</p>
 
 <p>The template will look something like this:</p>
@@ -405,17 +422,18 @@
 
 Best,
 
-The FruitApp team
-</code></pre>
+The FruitApp team</code></pre>
+<div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>Add the required line of code in the <code>post &amp;#39;/&amp;#39;</code> block, to send a welcome email to the new user.</li>
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. Add the required line of code in the <code>post '/'</code> block, to send a welcome email to the new user.
-2. Modify <code>views/email.erb</code> so that it (at least) contains the name of the person who just signed up.
-2. (Optional extension) deploy your app to heroku. You will need to add the (free version) of the <a href="https://addons.heroku.com/sendgrid">sendgrid addon</a> to allow you to send emails.
-4. (Alternative extension) Clone down the project <a href="https://github.com/code61/mailmerge">https://github.com/code61/mailmerge</a> and have a play!</p>
+<li>Modify <code>views/email.erb</code> so that it (at least) contains the name of the person who just signed up.</li>
+
+<li>(Optional extension) deploy your app to heroku. You will need to add the (free version) of the <a href='https://addons.heroku.com/sendgrid'>sendgrid addon</a> to allow you to send emails.</li>
+
+<li>(Alternative extension) Clone down the project <a href='https://github.com/code61/mailmerge'>https://github.com/code61/mailmerge</a> and have a play!</li>
+</ol>
 </div>
-
 	</div>
 
 	
@@ -423,12 +441,13 @@ The FruitApp team
 	
 
 		<h2>Homework</h2>
-		<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-1. Finish off any exercises from class.
-2. Do the <a href="http://www.codecademy.com/tracks/ruby">Codecademy Ruby track</a> Sections 7 and 8.</p>
-</div>
+		<div class='exercise alert alert-info'><strong>Task:</strong>
+<ol>
+<li>Finish off any exercises from class.</li>
 
+<li>Do the <a href='http://www.codecademy.com/tracks/ruby'>Codecademy Ruby track</a> Sections 7 and 8.</li>
+</ol>
+</div>
 	</div>
 
 	
@@ -436,60 +455,60 @@ The FruitApp team
 	
 
 		<h2>(Ext) Arrays and back</h2>
-		<p>This page is more advanced. This stuff is sometimes useful, but don’t worry if you want to skip over it the first time through.</p>
+		
+<p>This page is more advanced. This stuff is sometimes useful, but don’t worry if you want to skip over it the first time through.</p>
 
-<h3 id="converting-to-arrays-and-back">Converting to arrays and back</h3>
+<h3 id="converting_to_arrays_and_back">Converting to arrays and back</h3>
 
 <p>You can convert a hash to an array using the <code>to_a</code> method and use the <code>Hash[ ]</code> syntax to convert it back:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;a&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">}</span>
+<span class='n'>h</span><span class='o'>.</span><span class='n'>to_a</span> <span class='c1'>#=&gt; [[&#39;a&#39;, 1], [&#39;b&#39;, 2]]</span>
 
-<span class="n">h</span><span class="o">.</span><span class="n">to_a</span> <span class="c1">#=&gt; [[&#39;a&#39;, 1], [&#39;b&#39;, 2]]</span>
-
-<span class="n">h2</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="o">]]</span></code></pre></div>
-
+<span class='n'>h2</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>[[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='mi'>1</span><span class='o'>]</span><span class='p'>,</span> <span class='o'>[</span><span class='s1'>&#39;b&#39;</span><span class='p'>,</span> <span class='mi'>2</span><span class='o'>]]</span>
+</code></pre></div>
 <p>The <code>Hash[ ]</code> is also useful for creating a hash from arrays of keys and values (which is surprisingly useful).</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>keys</span> <span class='o'>=</span> <span class='o'>[</span><span class='mi'>1</span><span class='p'>,</span> <span class='mi'>2</span><span class='p'>,</span> <span class='mi'>3</span><span class='o'>]</span>
+<span class='n'>values</span> <span class='o'>=</span> <span class='o'>[</span><span class='s1'>&#39;one&#39;</span><span class='p'>,</span> <span class='s1'>&#39;two&#39;</span><span class='p'>,</span> <span class='s1'>&#39;three&#39;</span><span class='o'>]</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">keys</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-<span class="n">values</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="o">]</span>
+<span class='c1'># use Array#zip to get the arrays in the right format</span>
+<span class='n'>zipped</span> <span class='o'>=</span> <span class='n'>keys</span><span class='o'>.</span><span class='n'>zip</span><span class='p'>(</span><span class='n'>values</span><span class='p'>)</span>  <span class='c1'>#=&gt; [[1, &#39;one&#39;], [2, &#39;two&#39;], [3, &#39;three&#39;]]</span>
 
-<span class="c1"># use Array#zip to get the arrays in the right format</span>
-<span class="n">zipped</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>  <span class="c1">#=&gt; [[1, &#39;one&#39;], [2, &#39;two&#39;], [3, &#39;three&#39;]]</span>
+<span class='n'>h</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>[</span><span class='n'>zipped</span><span class='o'>]</span>  <span class='c1'>#=&gt; {1 =&gt; &#39;one&#39;, 2 =&gt; &#39;two&#39;, 3 =&gt; &#39;three&#39;}</span>
+</code></pre></div><div class='exercise alert alert-info'><strong>Task:</strong>
+<p>(Optional)</p>
 
-<span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span><span class="n">zipped</span><span class="o">]</span>  <span class="c1">#=&gt; {1 =&gt; &#39;one&#39;, 2 =&gt; &#39;two&#39;, 3 =&gt; &#39;three&#39;}</span></code></pre></div>
+<ol>
+<li>Work through the following examples, copying and pasting into irb.</li>
 
-<div class="exercise alert alert-info">
-  <p><strong>Task:</strong> 
-(Optional)
-1. Work through the following examples, copying and pasting into irb.
-2. See if you can do the challenge at the end.</p>
+<li>See if you can do the challenge at the end.</li>
+</ol>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># A few new ways to create a hash</span>
+<span class='c1'># -------------------------------</span>
 
-  <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># A few new ways to create a hash</span>
-<span class="c1"># -------------------------------</span>
+<span class='n'>h1</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='p'>,</span> <span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;c&#39;</span><span class='p'>,</span> <span class='mi'>3</span><span class='o'>]</span>
 
-<span class="n">h1</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-
-<span class="n">h2</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">3</span><span class="o">]]]</span>
+<span class='n'>h2</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>[[[</span><span class='s1'>&#39;a&#39;</span><span class='p'>,</span><span class='mi'>1</span><span class='o'>]</span><span class='p'>,</span><span class='o'>[</span><span class='s1'>&#39;b&#39;</span><span class='p'>,</span><span class='mi'>2</span><span class='o'>]</span><span class='p'>,</span><span class='o'>[</span><span class='s1'>&#39;c&#39;</span><span class='p'>,</span><span class='mi'>3</span><span class='o'>]]]</span>
 
 
-<span class="c1"># Converting to arrays (and back?)</span>
-<span class="c1"># -------------------------------</span>
+<span class='c1'># Converting to arrays (and back?)</span>
+<span class='c1'># -------------------------------</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">}</span>
+<span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;a&#39;</span><span class='o'>=&gt;</span><span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='o'>=&gt;</span><span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;c&#39;</span><span class='o'>=&gt;</span><span class='mi'>3</span><span class='p'>}</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">to_a</span>
+<span class='n'>a</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>to_a</span>
 
-<span class="c1"># How could you convert a back into h?</span>
+<span class='c1'># How could you convert a back into h?</span>
 
-<span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">}</span>
+<span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;one&#39;</span><span class='o'>=&gt;</span><span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;two&#39;</span><span class='o'>=&gt;</span><span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;three&#39;</span><span class='o'>=&gt;</span><span class='mi'>3</span><span class='p'>}</span>
 
-<span class="n">keys</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">keys</span>
-<span class="n">values</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">values</span>
+<span class='n'>keys</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>keys</span>
+<span class='n'>values</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>values</span>
 
-<span class="c1"># How would you combine keys and values back into h?</span></code></pre></div>
+<span class='c1'># How would you combine keys and values back into h?</span>
+</code></pre></div>
 
 </div>
-
 	</div>
 
 	
@@ -497,34 +516,30 @@ The FruitApp team
 	
 
 		<h2>(Ext) Exercise summary</h2>
-		<p>It’s easy to convert a <code>hash</code> into an <code>array</code>.</p>
+		
+<p>It’s easy to convert a <code>hash</code> into an <code>array</code>.</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;a&#39;</span><span class='o'>=&gt;</span><span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;b&#39;</span><span class='o'>=&gt;</span><span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;c&#39;</span><span class='o'>=&gt;</span><span class='mi'>3</span><span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">}</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">to_a</span>
-<span class="c1"># =&gt; [[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]</span></code></pre></div>
-
-<p>To convert back from an <code>array</code> to a <code>hash</code>, use </p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span><span class="o">=</span><span class="no">Hash</span><span class="o">[</span><span class="n">a</span><span class="o">]</span>
-<span class="c1"># =&gt; {&quot;a&quot;=&gt;1, &quot;b&quot;=&gt;2, &quot;c&quot;=&gt;3}</span></code></pre></div>
-
+<span class='n'>a</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>to_a</span>
+<span class='c1'># =&gt; [[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]] </span>
+</code></pre></div>
+<p>To convert back from an <code>array</code> to a <code>hash</code>, use</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span><span class='o'>=</span><span class='no'>Hash</span><span class='o'>[</span><span class='n'>a</span><span class='o'>]</span>
+<span class='c1'># =&gt; {&quot;a&quot;=&gt;1, &quot;b&quot;=&gt;2, &quot;c&quot;=&gt;3} </span>
+</code></pre></div>
 <p>You can unpack a <code>hash</code> into its keys and values with the <code>.keys</code> and <code>.values</code> methods</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='p'>{</span><span class='s1'>&#39;one&#39;</span><span class='o'>=&gt;</span><span class='mi'>1</span><span class='p'>,</span> <span class='s1'>&#39;two&#39;</span><span class='o'>=&gt;</span><span class='mi'>2</span><span class='p'>,</span> <span class='s1'>&#39;three&#39;</span><span class='o'>=&gt;</span><span class='mi'>3</span><span class='p'>}</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">}</span>
+<span class='n'>keys</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>keys</span>
+<span class='c1'>#=&gt; [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;] </span>
+<span class='n'>values</span> <span class='o'>=</span> <span class='n'>h</span><span class='o'>.</span><span class='n'>values</span>
+<span class='c1'>#=&gt; [1, 2, 3] </span>
+</code></pre></div>
+<p>and put it back together with</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>h</span> <span class='o'>=</span> <span class='no'>Hash</span><span class='o'>[</span><span class='n'>keys</span><span class='o'>.</span><span class='n'>zip</span><span class='p'>(</span><span class='n'>values</span><span class='p'>)</span><span class='o'>]</span>
 
-<span class="n">keys</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">keys</span>
-<span class="c1">#=&gt; [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;] </span>
-<span class="n">values</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">values</span>
-<span class="c1">#=&gt; [1, 2, 3]</span></code></pre></div>
-
-<p>and put it back together with </p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span><span class="n">keys</span><span class="o">.</span><span class="n">zip</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="o">]</span>
-
-<span class="c1"># =&gt; {&quot;one&quot;=&gt;1, &quot;two&quot;=&gt;2, &quot;three&quot;=&gt;3}</span></code></pre></div>
-
-
+<span class='c1'># =&gt; {&quot;one&quot;=&gt;1, &quot;two&quot;=&gt;2, &quot;three&quot;=&gt;3} </span>
+</code></pre></div>
 	</div>
 
 </div>
